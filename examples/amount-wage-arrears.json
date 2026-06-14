@@ -1,0 +1,19 @@
+{
+  "records": [
+    {
+      "period": "2026-03",
+      "expected": 9000,
+      "paid": 5000
+    },
+    {
+      "period": "2026-04",
+      "expected": 9000,
+      "paid": 0
+    },
+    {
+      "period": "2026-05",
+      "expected": 9000,
+      "paid": 0
+    }
+  ]
+}

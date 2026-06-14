@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>evidence-index</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; max-width: 860px; margin: 32px auto; padding: 0 24px; line-height: 1.75; color: #172033; }
+    h1, h2, h3 { line-height: 1.35; }
+    blockquote { border-left: 4px solid #2684ff; margin: 16px 0; padding: 8px 16px; background: #f5f9ff; color: #344563; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #dfe1e6; padding: 8px; }
+    @media print { body { margin: 0 auto; } }
+  </style>
+</head>
+<body>
+<h1>证据目录（草稿）</h1>
+<blockquote>提交前请按当地仲裁委要求编号、打印、截图留存原件来源，并避免伪造或篡改证据。</blockquote>
+<table>
+<tr><th>序号</th><th>证据名称</th><th>证明目的</th><th>备注</th></tr>
+<tr><td>1</td><td>劳动合同/offer/入职通知</td><td>【请填写证明目的】</td><td>【页码/截图时间/来源】</td></tr>
+<tr><td>2</td><td>工资条/银行流水</td><td>【请填写证明目的】</td><td>【页码/截图时间/来源】</td></tr>
+<tr><td>3</td><td>考勤记录</td><td>【请填写证明目的】</td><td>【页码/截图时间/来源】</td></tr>
+<tr><td>4</td><td>催讨工资聊天记录</td><td>【请填写证明目的】</td><td>【页码/截图时间/来源】</td></tr>
+<tr><td>5</td><td>解除通知或离职沟通记录</td><td>【请填写证明目的】</td><td>【页码/截图时间/来源】</td></tr>
+</table>
+</body>
+</html>

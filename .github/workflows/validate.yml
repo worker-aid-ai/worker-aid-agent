@@ -12,5 +12,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm run validate
-      - run: npm run demo
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run validate
+      - run: pnpm test
+      - run: pnpm run demo

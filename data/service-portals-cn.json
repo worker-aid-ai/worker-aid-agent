@@ -1,0 +1,990 @@
+{
+  "schemaVersion": "0.2.0",
+  "datasetId": "cn-worker-help-portals",
+  "name": "中国劳动者法律援助与劳动监察入口索引（启动版）",
+  "lastReviewed": "2026-06-14",
+  "importantNotice": [
+    "本文件优先记录可靠的全国入口、热线和省级关键词；地方具体 URL 可能调整，使用前请在官方平台二次核验。",
+    "法律援助是否受理、是否需要经济困难证明、材料清单和线上办理方式，以当地司法行政机关/法律援助中心要求为准。",
+    "劳动监察投诉与劳动仲裁不同：监察通常处理欠薪、违法用工等行政执法线索；仲裁处理劳动争议裁判性请求。"
+  ],
+  "national": {
+    "humanResourcesPortal": {
+      "name": "全国人社政务服务平台",
+      "url": "https://www.12333.gov.cn/",
+      "hotline": "12333"
+    },
+    "legalServicePortal": {
+      "name": "中国法律服务网",
+      "url": "https://www.12348.gov.cn/",
+      "hotline": "12348"
+    },
+    "governmentServicePortal": {
+      "name": "中国政务服务平台",
+      "url": "https://gjzwfw.www.gov.cn/"
+    },
+    "unionRightsHotline": {
+      "name": "职工维权热线",
+      "hotline": "12351"
+    }
+  },
+  "regions": [
+    {
+      "regionCode": "beijing",
+      "regionName": "北京",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "北京 法律援助中心",
+          "北京 司法厅 法律援助",
+          "北京 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "北京 劳动保障监察 投诉举报",
+          "北京 人社局 欠薪 投诉",
+          "北京 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "北京 劳动人事争议仲裁委员会",
+          "北京 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "tianjin",
+      "regionName": "天津",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "天津 法律援助中心",
+          "天津 司法厅 法律援助",
+          "天津 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "天津 劳动保障监察 投诉举报",
+          "天津 人社局 欠薪 投诉",
+          "天津 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "天津 劳动人事争议仲裁委员会",
+          "天津 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "hebei",
+      "regionName": "河北",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "河北 法律援助中心",
+          "河北 司法厅 法律援助",
+          "河北 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "河北 劳动保障监察 投诉举报",
+          "河北 人社局 欠薪 投诉",
+          "河北 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "河北 劳动人事争议仲裁委员会",
+          "河北 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "shanxi",
+      "regionName": "山西",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "山西 法律援助中心",
+          "山西 司法厅 法律援助",
+          "山西 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "山西 劳动保障监察 投诉举报",
+          "山西 人社局 欠薪 投诉",
+          "山西 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "山西 劳动人事争议仲裁委员会",
+          "山西 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "inner_mongolia",
+      "regionName": "内蒙古",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "内蒙古 法律援助中心",
+          "内蒙古 司法厅 法律援助",
+          "内蒙古 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "内蒙古 劳动保障监察 投诉举报",
+          "内蒙古 人社局 欠薪 投诉",
+          "内蒙古 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "内蒙古 劳动人事争议仲裁委员会",
+          "内蒙古 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "liaoning",
+      "regionName": "辽宁",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "辽宁 法律援助中心",
+          "辽宁 司法厅 法律援助",
+          "辽宁 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "辽宁 劳动保障监察 投诉举报",
+          "辽宁 人社局 欠薪 投诉",
+          "辽宁 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "辽宁 劳动人事争议仲裁委员会",
+          "辽宁 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "jilin",
+      "regionName": "吉林",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "吉林 法律援助中心",
+          "吉林 司法厅 法律援助",
+          "吉林 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "吉林 劳动保障监察 投诉举报",
+          "吉林 人社局 欠薪 投诉",
+          "吉林 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "吉林 劳动人事争议仲裁委员会",
+          "吉林 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "heilongjiang",
+      "regionName": "黑龙江",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "黑龙江 法律援助中心",
+          "黑龙江 司法厅 法律援助",
+          "黑龙江 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "黑龙江 劳动保障监察 投诉举报",
+          "黑龙江 人社局 欠薪 投诉",
+          "黑龙江 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "黑龙江 劳动人事争议仲裁委员会",
+          "黑龙江 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "shanghai",
+      "regionName": "上海",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "上海 法律援助中心",
+          "上海 司法厅 法律援助",
+          "上海 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "上海 劳动保障监察 投诉举报",
+          "上海 人社局 欠薪 投诉",
+          "上海 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "上海 劳动人事争议仲裁委员会",
+          "上海 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "jiangsu",
+      "regionName": "江苏",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "江苏 法律援助中心",
+          "江苏 司法厅 法律援助",
+          "江苏 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "江苏 劳动保障监察 投诉举报",
+          "江苏 人社局 欠薪 投诉",
+          "江苏 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "江苏 劳动人事争议仲裁委员会",
+          "江苏 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "zhejiang",
+      "regionName": "浙江",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "浙江 法律援助中心",
+          "浙江 司法厅 法律援助",
+          "浙江 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "浙江 劳动保障监察 投诉举报",
+          "浙江 人社局 欠薪 投诉",
+          "浙江 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "浙江 劳动人事争议仲裁委员会",
+          "浙江 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "anhui",
+      "regionName": "安徽",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "安徽 法律援助中心",
+          "安徽 司法厅 法律援助",
+          "安徽 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "安徽 劳动保障监察 投诉举报",
+          "安徽 人社局 欠薪 投诉",
+          "安徽 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "安徽 劳动人事争议仲裁委员会",
+          "安徽 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "fujian",
+      "regionName": "福建",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "福建 法律援助中心",
+          "福建 司法厅 法律援助",
+          "福建 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "福建 劳动保障监察 投诉举报",
+          "福建 人社局 欠薪 投诉",
+          "福建 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "福建 劳动人事争议仲裁委员会",
+          "福建 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "jiangxi",
+      "regionName": "江西",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "江西 法律援助中心",
+          "江西 司法厅 法律援助",
+          "江西 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "江西 劳动保障监察 投诉举报",
+          "江西 人社局 欠薪 投诉",
+          "江西 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "江西 劳动人事争议仲裁委员会",
+          "江西 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "shandong",
+      "regionName": "山东",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "山东 法律援助中心",
+          "山东 司法厅 法律援助",
+          "山东 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "山东 劳动保障监察 投诉举报",
+          "山东 人社局 欠薪 投诉",
+          "山东 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "山东 劳动人事争议仲裁委员会",
+          "山东 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "henan",
+      "regionName": "河南",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "河南 法律援助中心",
+          "河南 司法厅 法律援助",
+          "河南 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "河南 劳动保障监察 投诉举报",
+          "河南 人社局 欠薪 投诉",
+          "河南 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "河南 劳动人事争议仲裁委员会",
+          "河南 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "hubei",
+      "regionName": "湖北",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "湖北 法律援助中心",
+          "湖北 司法厅 法律援助",
+          "湖北 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "湖北 劳动保障监察 投诉举报",
+          "湖北 人社局 欠薪 投诉",
+          "湖北 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "湖北 劳动人事争议仲裁委员会",
+          "湖北 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "hunan",
+      "regionName": "湖南",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "湖南 法律援助中心",
+          "湖南 司法厅 法律援助",
+          "湖南 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "湖南 劳动保障监察 投诉举报",
+          "湖南 人社局 欠薪 投诉",
+          "湖南 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "湖南 劳动人事争议仲裁委员会",
+          "湖南 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "guangdong",
+      "regionName": "广东",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "广东 法律援助中心",
+          "广东 司法厅 法律援助",
+          "广东 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "广东 劳动保障监察 投诉举报",
+          "广东 人社局 欠薪 投诉",
+          "广东 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "广东 劳动人事争议仲裁委员会",
+          "广东 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "shenzhen",
+      "regionName": "深圳",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "深圳 法律援助中心",
+          "深圳 司法厅 法律援助",
+          "深圳 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "深圳 劳动保障监察 投诉举报",
+          "深圳 人社局 欠薪 投诉",
+          "深圳 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "深圳 劳动人事争议仲裁委员会",
+          "深圳 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "guangxi",
+      "regionName": "广西",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "广西 法律援助中心",
+          "广西 司法厅 法律援助",
+          "广西 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "广西 劳动保障监察 投诉举报",
+          "广西 人社局 欠薪 投诉",
+          "广西 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "广西 劳动人事争议仲裁委员会",
+          "广西 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "hainan",
+      "regionName": "海南",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "海南 法律援助中心",
+          "海南 司法厅 法律援助",
+          "海南 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "海南 劳动保障监察 投诉举报",
+          "海南 人社局 欠薪 投诉",
+          "海南 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "海南 劳动人事争议仲裁委员会",
+          "海南 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "chongqing",
+      "regionName": "重庆",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "重庆 法律援助中心",
+          "重庆 司法厅 法律援助",
+          "重庆 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "重庆 劳动保障监察 投诉举报",
+          "重庆 人社局 欠薪 投诉",
+          "重庆 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "重庆 劳动人事争议仲裁委员会",
+          "重庆 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "sichuan",
+      "regionName": "四川",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "四川 法律援助中心",
+          "四川 司法厅 法律援助",
+          "四川 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "四川 劳动保障监察 投诉举报",
+          "四川 人社局 欠薪 投诉",
+          "四川 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "四川 劳动人事争议仲裁委员会",
+          "四川 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "guizhou",
+      "regionName": "贵州",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "贵州 法律援助中心",
+          "贵州 司法厅 法律援助",
+          "贵州 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "贵州 劳动保障监察 投诉举报",
+          "贵州 人社局 欠薪 投诉",
+          "贵州 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "贵州 劳动人事争议仲裁委员会",
+          "贵州 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "yunnan",
+      "regionName": "云南",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "云南 法律援助中心",
+          "云南 司法厅 法律援助",
+          "云南 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "云南 劳动保障监察 投诉举报",
+          "云南 人社局 欠薪 投诉",
+          "云南 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "云南 劳动人事争议仲裁委员会",
+          "云南 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "xizang",
+      "regionName": "西藏",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "西藏 法律援助中心",
+          "西藏 司法厅 法律援助",
+          "西藏 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "西藏 劳动保障监察 投诉举报",
+          "西藏 人社局 欠薪 投诉",
+          "西藏 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "西藏 劳动人事争议仲裁委员会",
+          "西藏 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "shaanxi",
+      "regionName": "陕西",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "陕西 法律援助中心",
+          "陕西 司法厅 法律援助",
+          "陕西 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "陕西 劳动保障监察 投诉举报",
+          "陕西 人社局 欠薪 投诉",
+          "陕西 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "陕西 劳动人事争议仲裁委员会",
+          "陕西 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "gansu",
+      "regionName": "甘肃",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "甘肃 法律援助中心",
+          "甘肃 司法厅 法律援助",
+          "甘肃 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "甘肃 劳动保障监察 投诉举报",
+          "甘肃 人社局 欠薪 投诉",
+          "甘肃 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "甘肃 劳动人事争议仲裁委员会",
+          "甘肃 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "qinghai",
+      "regionName": "青海",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "青海 法律援助中心",
+          "青海 司法厅 法律援助",
+          "青海 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "青海 劳动保障监察 投诉举报",
+          "青海 人社局 欠薪 投诉",
+          "青海 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "青海 劳动人事争议仲裁委员会",
+          "青海 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "ningxia",
+      "regionName": "宁夏",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "宁夏 法律援助中心",
+          "宁夏 司法厅 法律援助",
+          "宁夏 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "宁夏 劳动保障监察 投诉举报",
+          "宁夏 人社局 欠薪 投诉",
+          "宁夏 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "宁夏 劳动人事争议仲裁委员会",
+          "宁夏 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "xinjiang",
+      "regionName": "新疆",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "新疆 法律援助中心",
+          "新疆 司法厅 法律援助",
+          "新疆 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "新疆 劳动保障监察 投诉举报",
+          "新疆 人社局 欠薪 投诉",
+          "新疆 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "新疆 劳动人事争议仲裁委员会",
+          "新疆 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    },
+    {
+      "regionCode": "xinjiang_bingtuan",
+      "regionName": "新疆生产建设兵团",
+      "legalAid": {
+        "primaryHotline": "12348",
+        "portal": "https://www.12348.gov.cn/",
+        "searchKeywords": [
+          "新疆生产建设兵团 法律援助中心",
+          "新疆生产建设兵团 司法厅 法律援助",
+          "新疆生产建设兵团 12348"
+        ]
+      },
+      "laborSupervision": {
+        "primaryHotline": "12333",
+        "portal": "https://www.12333.gov.cn/",
+        "searchKeywords": [
+          "新疆生产建设兵团 劳动保障监察 投诉举报",
+          "新疆生产建设兵团 人社局 欠薪 投诉",
+          "新疆生产建设兵团 12333"
+        ]
+      },
+      "arbitration": {
+        "searchKeywords": [
+          "新疆生产建设兵团 劳动人事争议仲裁委员会",
+          "新疆生产建设兵团 劳动仲裁 申请 材料"
+        ]
+      },
+      "verificationStatus": "national_entry_with_local_keywords"
+    }
+  ]
+}

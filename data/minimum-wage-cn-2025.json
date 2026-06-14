@@ -1,0 +1,1088 @@
+{
+  "schemaVersion": "0.2.0",
+  "datasetId": "cn-minimum-wage-bootstrap-2025-01-01",
+  "name": "中国大陆各地区最低工资标准基准数据（启动版）",
+  "country": "CN",
+  "currency": "CNY",
+  "effectiveAsOf": "2025-01-01",
+  "lastReviewed": "2026-06-14",
+  "authorityLevel": "bootstrap_reference",
+  "importantNotice": [
+    "本文件是项目启动用基准数据，不是官方实时数据源。最低工资标准可能由各省、自治区、直辖市调整，请以当地人社部门、12333 或政府公报为准。",
+    "多档标准通常对应不同市/县/区，实际适用档位必须结合劳动合同履行地或用工地核验。",
+    "非全日制小时最低工资、月最低工资是否包含社保公积金个人缴费等事项，地方口径可能不同。"
+  ],
+  "nationalPortals": [
+    {
+      "name": "全国人社政务服务平台",
+      "url": "https://www.12333.gov.cn/",
+      "purpose": "人社政策、办事指南、地方服务窗口、12333服务入口"
+    },
+    {
+      "name": "人力资源和社会保障部",
+      "url": "https://www.mohrss.gov.cn/",
+      "purpose": "全国性政策与公告入口"
+    }
+  ],
+  "records": [
+    {
+      "regionCode": "beijing",
+      "regionName": "北京",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2420
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 26.4
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "tianjin",
+      "regionName": "天津",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2320
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 24.4
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "hebei",
+      "regionName": "河北",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2200
+        },
+        {
+          "tier": 2,
+          "amount": 2000
+        },
+        {
+          "tier": 3,
+          "amount": 1800
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 22
+        },
+        {
+          "tier": 2,
+          "amount": 20
+        },
+        {
+          "tier": 3,
+          "amount": 18
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "shanxi",
+      "regionName": "山西",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2150
+        },
+        {
+          "tier": 2,
+          "amount": 2050
+        },
+        {
+          "tier": 3,
+          "amount": 1950
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 23.2
+        },
+        {
+          "tier": 2,
+          "amount": 22.1
+        },
+        {
+          "tier": 3,
+          "amount": 20.9
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "inner_mongolia",
+      "regionName": "内蒙古",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2270
+        },
+        {
+          "tier": 2,
+          "amount": 2200
+        },
+        {
+          "tier": 3,
+          "amount": 2140
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 22.4
+        },
+        {
+          "tier": 2,
+          "amount": 21.7
+        },
+        {
+          "tier": 3,
+          "amount": 21.1
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "liaoning",
+      "regionName": "辽宁",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2100
+        },
+        {
+          "tier": 2,
+          "amount": 1900
+        },
+        {
+          "tier": 3,
+          "amount": 1700
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 21
+        },
+        {
+          "tier": 2,
+          "amount": 19
+        },
+        {
+          "tier": 3,
+          "amount": 17
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "jilin",
+      "regionName": "吉林",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2100
+        },
+        {
+          "tier": 2,
+          "amount": 1920
+        },
+        {
+          "tier": 3,
+          "amount": 1780
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 21
+        },
+        {
+          "tier": 2,
+          "amount": 19.5
+        },
+        {
+          "tier": 3,
+          "amount": 18
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "heilongjiang",
+      "regionName": "黑龙江",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2080
+        },
+        {
+          "tier": 2,
+          "amount": 1850
+        },
+        {
+          "tier": 3,
+          "amount": 1750
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 19
+        },
+        {
+          "tier": 2,
+          "amount": 17
+        },
+        {
+          "tier": 3,
+          "amount": 16.5
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "shanghai",
+      "regionName": "上海",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2690
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 24
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "jiangsu",
+      "regionName": "江苏",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2490
+        },
+        {
+          "tier": 2,
+          "amount": 2260
+        },
+        {
+          "tier": 3,
+          "amount": 2010
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 24
+        },
+        {
+          "tier": 2,
+          "amount": 22
+        },
+        {
+          "tier": 3,
+          "amount": 20
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "zhejiang",
+      "regionName": "浙江",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2490
+        },
+        {
+          "tier": 2,
+          "amount": 2260
+        },
+        {
+          "tier": 3,
+          "amount": 2010
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 24
+        },
+        {
+          "tier": 2,
+          "amount": 22
+        },
+        {
+          "tier": 3,
+          "amount": 20
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "anhui",
+      "regionName": "安徽",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2060
+        },
+        {
+          "tier": 2,
+          "amount": 1930
+        },
+        {
+          "tier": 3,
+          "amount": 1870
+        },
+        {
+          "tier": 4,
+          "amount": 1780
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 21
+        },
+        {
+          "tier": 2,
+          "amount": 20
+        },
+        {
+          "tier": 3,
+          "amount": 19
+        },
+        {
+          "tier": 4,
+          "amount": 18
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "fujian",
+      "regionName": "福建",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2030
+        },
+        {
+          "tier": 2,
+          "amount": 1960
+        },
+        {
+          "tier": 3,
+          "amount": 1810
+        },
+        {
+          "tier": 4,
+          "amount": 1660
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 21
+        },
+        {
+          "tier": 2,
+          "amount": 20.5
+        },
+        {
+          "tier": 3,
+          "amount": 19
+        },
+        {
+          "tier": 4,
+          "amount": 17.5
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "jiangxi",
+      "regionName": "江西",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2000
+        },
+        {
+          "tier": 2,
+          "amount": 1870
+        },
+        {
+          "tier": 3,
+          "amount": 1740
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 20
+        },
+        {
+          "tier": 2,
+          "amount": 18.7
+        },
+        {
+          "tier": 3,
+          "amount": 17.4
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "shandong",
+      "regionName": "山东",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2200
+        },
+        {
+          "tier": 2,
+          "amount": 2010
+        },
+        {
+          "tier": 3,
+          "amount": 1820
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 22
+        },
+        {
+          "tier": 2,
+          "amount": 20
+        },
+        {
+          "tier": 3,
+          "amount": 18
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "henan",
+      "regionName": "河南",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2100
+        },
+        {
+          "tier": 2,
+          "amount": 2000
+        },
+        {
+          "tier": 3,
+          "amount": 1800
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 20.6
+        },
+        {
+          "tier": 2,
+          "amount": 19.6
+        },
+        {
+          "tier": 3,
+          "amount": 17.6
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "hubei",
+      "regionName": "湖北",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2100
+        },
+        {
+          "tier": 2,
+          "amount": 1950
+        },
+        {
+          "tier": 3,
+          "amount": 1800
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 22
+        },
+        {
+          "tier": 2,
+          "amount": 19.5
+        },
+        {
+          "tier": 3,
+          "amount": 18
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "hunan",
+      "regionName": "湖南",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2100
+        },
+        {
+          "tier": 2,
+          "amount": 1900
+        },
+        {
+          "tier": 3,
+          "amount": 1700
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 21
+        },
+        {
+          "tier": 2,
+          "amount": 19
+        },
+        {
+          "tier": 3,
+          "amount": 17
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "guangdong",
+      "regionName": "广东",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2300
+        },
+        {
+          "tier": 2,
+          "amount": 1900
+        },
+        {
+          "tier": 3,
+          "amount": 1720
+        },
+        {
+          "tier": 4,
+          "amount": 1620
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 22.2
+        },
+        {
+          "tier": 2,
+          "amount": 18.1
+        },
+        {
+          "tier": 3,
+          "amount": 17
+        },
+        {
+          "tier": 4,
+          "amount": 16.1
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "shenzhen",
+      "regionName": "深圳",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2360
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 22.2
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。 深圳为计划单列城市，单独列出。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "guangxi",
+      "regionName": "广西",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 1990
+        },
+        {
+          "tier": 2,
+          "amount": 1840
+        },
+        {
+          "tier": 3,
+          "amount": 1690
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 20.1
+        },
+        {
+          "tier": 2,
+          "amount": 18.6
+        },
+        {
+          "tier": 3,
+          "amount": 17
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "hainan",
+      "regionName": "海南",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2010
+        },
+        {
+          "tier": 2,
+          "amount": 1850
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 17.9
+        },
+        {
+          "tier": 2,
+          "amount": 16.3
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "chongqing",
+      "regionName": "重庆",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2300
+        },
+        {
+          "tier": 2,
+          "amount": 2200
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 23
+        },
+        {
+          "tier": 2,
+          "amount": 22
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "sichuan",
+      "regionName": "四川",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2330
+        },
+        {
+          "tier": 2,
+          "amount": 2200
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 23
+        },
+        {
+          "tier": 2,
+          "amount": 22
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "guizhou",
+      "regionName": "贵州",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 1890
+        },
+        {
+          "tier": 2,
+          "amount": 1760
+        },
+        {
+          "tier": 3,
+          "amount": 1660
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 19.6
+        },
+        {
+          "tier": 2,
+          "amount": 18.3
+        },
+        {
+          "tier": 3,
+          "amount": 17.2
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "yunnan",
+      "regionName": "云南",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2070
+        },
+        {
+          "tier": 2,
+          "amount": 1920
+        },
+        {
+          "tier": 3,
+          "amount": 1770
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 20
+        },
+        {
+          "tier": 2,
+          "amount": 19
+        },
+        {
+          "tier": 3,
+          "amount": 18
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "xizang",
+      "regionName": "西藏",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2100
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 20
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "shaanxi",
+      "regionName": "陕西",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2160
+        },
+        {
+          "tier": 2,
+          "amount": 2050
+        },
+        {
+          "tier": 3,
+          "amount": 1950
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 21
+        },
+        {
+          "tier": 2,
+          "amount": 20
+        },
+        {
+          "tier": 3,
+          "amount": 19
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "gansu",
+      "regionName": "甘肃",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2020
+        },
+        {
+          "tier": 2,
+          "amount": 1960
+        },
+        {
+          "tier": 3,
+          "amount": 1910
+        },
+        {
+          "tier": 4,
+          "amount": 1850
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 21
+        },
+        {
+          "tier": 2,
+          "amount": 20.5
+        },
+        {
+          "tier": 3,
+          "amount": 20
+        },
+        {
+          "tier": 4,
+          "amount": 19.5
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "qinghai",
+      "regionName": "青海",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 1800
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 18
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "ningxia",
+      "regionName": "宁夏",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2050
+        },
+        {
+          "tier": 2,
+          "amount": 1900
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 20
+        },
+        {
+          "tier": 2,
+          "amount": 18
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "xinjiang",
+      "regionName": "新疆",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2070
+        },
+        {
+          "tier": 2,
+          "amount": 1890
+        },
+        {
+          "tier": 3,
+          "amount": 1750
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 20.7
+        },
+        {
+          "tier": 2,
+          "amount": 18.9
+        },
+        {
+          "tier": 3,
+          "amount": 17.5
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    },
+    {
+      "regionCode": "xinjiang_bingtuan",
+      "regionName": "新疆生产建设兵团",
+      "monthlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 2070
+        },
+        {
+          "tier": 2,
+          "amount": 1890
+        },
+        {
+          "tier": 3,
+          "amount": 1750
+        }
+      ],
+      "hourlyMinimumWageTiers": [
+        {
+          "tier": 1,
+          "amount": 20.7
+        },
+        {
+          "tier": 2,
+          "amount": 18.9
+        },
+        {
+          "tier": 3,
+          "amount": 17.5
+        }
+      ],
+      "tierNote": "不同档位通常对应不同市/县/区，请以当地人社部门公布的适用区域为准。",
+      "sourceType": "public_bootstrap_table",
+      "verificationStatus": "needs_local_official_verification"
+    }
+  ]
+}

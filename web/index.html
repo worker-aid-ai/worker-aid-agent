@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Worker Aid Agent</title>
+  <link rel="stylesheet" href="/web/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Worker Aid Agent · 中国劳动者权益自助工具</p>
+      <h1>案情采集、金额估算、最低工资查询与文书草稿导出</h1>
+      <p>本页面是离线优先的静态 MVP，不上传个人信息。生成内容仅供材料准备和咨询参考，不构成法律意见。</p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card">
+      <h2>1. 案情采集</h2>
+      <div class="grid two">
+        <label>劳动者姓名<input id="workerName" placeholder="张三" /></label>
+        <label>工作城市<input id="city" placeholder="深圳" /></label>
+        <label>用人单位<input id="employerName" placeholder="某科技有限公司" /></label>
+        <label>岗位<input id="position" placeholder="前端开发" /></label>
+        <label>入职日期<input id="startDate" type="date" /></label>
+        <label>月工资<input id="monthlySalary" type="number" placeholder="9000" /></label>
+        <label>欠薪金额<input id="unpaidWages" type="number" placeholder="18000" /></label>
+        <label>是否签书面劳动合同
+          <select id="hasContract"><option value="unknown">未知/需补充</option><option value="true">已签</option><option value="false">未签</option></select>
+        </label>
+      </div>
+      <label>主要诉求<textarea id="claims" placeholder="请求支付拖欠工资 18000 元\n请求支付未签劳动合同二倍工资差额"></textarea></label>
+      <div class="actions">
+        <button id="buildCase">生成案情 JSON</button>
+        <button id="downloadCase">下载案情 JSON</button>
+      </div>
+      <pre id="caseOutput"></pre>
+    </section>
+
+    <section class="card">
+      <h2>2. 加班费估算</h2>
+      <div class="grid three">
+        <label>月工资基数<input id="otSalary" type="number" placeholder="8700" /></label>
+        <label>工作日加班小时<input id="otWorkday" type="number" placeholder="10" /></label>
+        <label>休息日加班小时<input id="otRest" type="number" placeholder="8" /></label>
+        <label>法定节假日加班小时<input id="otHoliday" type="number" placeholder="8" /></label>
+        <label>已支付加班费<input id="otPaid" type="number" placeholder="0" /></label>
+      </div>
+      <button id="calcOvertime">计算加班费</button>
+      <pre id="overtimeOutput"></pre>
+    </section>
+
+    <section class="card">
+      <h2>3. 最低工资查询</h2>
+      <div class="grid two">
+        <label>地区<select id="minimumRegion"></select></label>
+        <label>档位<input id="minimumTier" type="number" min="1" value="1" /></label>
+      </div>
+      <button id="lookupMinimum">查询</button>
+      <pre id="minimumOutput"></pre>
+    </section>
+
+    <section class="card">
+      <h2>4. 文书草稿导出</h2>
+      <p>基于案情 JSON 生成可复制的仲裁申请书、法律援助咨询摘要和证据目录草稿。</p>
+      <div class="actions">
+        <button data-doc="arbitration">生成仲裁申请书</button>
+        <button data-doc="legal-aid-summary">生成法律援助摘要</button>
+        <button data-doc="evidence-index">生成证据目录</button>
+      </div>
+      <div class="actions">
+        <button id="downloadMd">下载 Markdown</button>
+        <button id="downloadHtml">下载 HTML</button>
+      </div>
+      <textarea id="docOutput" class="doc" placeholder="文书草稿将在这里生成"></textarea>
+    </section>
+  </main>
+
+  <script type="module" src="/web/app.js"></script>
+</body>
+</html>
