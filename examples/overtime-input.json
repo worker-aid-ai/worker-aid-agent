@@ -1,0 +1,9 @@
+{
+  "monthlySalary": 12000,
+  "monthlyWorkingDays": 21.75,
+  "standardHoursPerDay": 8,
+  "workdayOvertimeHours": 30,
+  "restDayOvertimeHours": 16,
+  "statutoryHolidayOvertimeHours": 8,
+  "alreadyPaidOvertime": 1000
+}

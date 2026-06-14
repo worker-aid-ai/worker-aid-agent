@@ -1,0 +1,28 @@
+{
+  "worker": {
+    "name": "劳动者A",
+    "city": "深圳",
+    "phoneMasked": "138****8000",
+    "addressMasked": "广东省深圳市某区"
+  },
+  "employer": {
+    "name": "深圳某科技有限公司",
+    "creditCode": "【请查询后填写】",
+    "address": "深圳市某区某街道",
+    "legalRepresentative": "【请查询后填写】"
+  },
+  "facts": {
+    "startDate": "2024-03-01",
+    "endDate": "2026-05-31",
+    "position": "前端开发工程师",
+    "monthlySalary": 12000,
+    "unpaidWages": 24000,
+    "hasWrittenContract": false,
+    "terminationReason": "公司口头通知不用再来上班，未出具书面解除通知。"
+  },
+  "claims": [
+    "请求被申请人支付拖欠工资 24,000 元",
+    "请求确认双方存在劳动关系",
+    "请求被申请人支付未签书面劳动合同二倍工资差额（具体金额以核算为准）"
+  ]
+}

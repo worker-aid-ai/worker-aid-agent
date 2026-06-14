@@ -1,0 +1,30 @@
+{
+  "name": "worker-aid-agent",
+  "version": "0.1.0",
+  "description": "Open-source AI agents and skills for Chinese workers' rights self-help, evidence organization, and legal-aid preparation.",
+  "type": "module",
+  "private": false,
+  "license": "AGPL-3.0-or-later",
+  "bin": {
+    "worker-aid": "src/worker-aid-cli.mjs"
+  },
+  "scripts": {
+    "demo": "node src/worker-aid-cli.mjs classify examples/case-wage-arrears.json && node src/worker-aid-cli.mjs checklist wage_arrears && node src/worker-aid-cli.mjs overtime examples/overtime-input.json",
+    "classify": "node src/worker-aid-cli.mjs classify",
+    "checklist": "node src/worker-aid-cli.mjs checklist",
+    "draft": "node src/worker-aid-cli.mjs draft arbitration",
+    "validate": "node src/validate.mjs"
+  },
+  "keywords": [
+    "labor-rights",
+    "workers-rights",
+    "legal-aid",
+    "china",
+    "ai-agent",
+    "skills",
+    "open-source"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
