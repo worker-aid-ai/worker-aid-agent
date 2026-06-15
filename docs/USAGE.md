@@ -14,7 +14,14 @@
     "monthlySalary": 12000,
     "unpaidWages": 24000,
     "hasWrittenContract": false,
-    "terminationReason": "公司口头通知不用来上班"
+    "terminationReason": "公司口头通知不用来上班",
+    "events": [
+      {
+        "date": "2026-04-10",
+        "title": "工资开始拖欠",
+        "description": "4 月工资未按约定日期发放"
+      }
+    ]
   },
   "claims": ["支付拖欠工资", "未签劳动合同二倍工资差额", "违法解除赔偿金"]
 }
@@ -38,7 +45,15 @@ node src/worker-aid-cli.mjs checklist wage_arrears
 node src/worker-aid-cli.mjs overtime examples/overtime-input.json
 ```
 
-## 5. 生成仲裁申请书草稿
+## 5. 生成案件时间线
+
+```bash
+node src/worker-aid-cli.mjs timeline examples/case-wage-arrears.json
+```
+
+时间线只用于整理事实顺序和证据节点。不要为补齐时间线而编造日期、通知内容、聊天记录或证据来源；涉及时效、管辖和证明力时应人工复核。
+
+## 6. 生成仲裁申请书草稿
 
 ```bash
 node src/worker-aid-cli.mjs draft arbitration examples/case-wage-arrears.json

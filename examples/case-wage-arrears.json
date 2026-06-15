@@ -18,7 +18,19 @@
     "monthlySalary": 12000,
     "unpaidWages": 24000,
     "hasWrittenContract": false,
-    "terminationReason": "公司口头通知不用再来上班，未出具书面解除通知。"
+    "terminationReason": "公司口头通知不用再来上班，未出具书面解除通知。",
+    "events": [
+      {
+        "date": "2026-04-10",
+        "title": "工资开始拖欠",
+        "description": "4 月工资未按约定日期发放，劳动者开始保存工资流水和沟通记录。"
+      },
+      {
+        "date": "2026-05-20",
+        "title": "催讨欠薪",
+        "description": "劳动者通过微信向主管催讨 4 月和 5 月工资。"
+      }
+    ]
   },
   "claims": [
     "请求被申请人支付拖欠工资 24,000 元",

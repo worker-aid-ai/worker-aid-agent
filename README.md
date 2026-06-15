@@ -81,10 +81,13 @@ node src/worker-aid-cli.mjs overtime examples/overtime-input.json
 # 4. 查询最低工资启动版数据，提交前必须核验当地最新官方口径
 node src/worker-aid-cli.mjs minimum-wage 深圳
 
-# 5. 基于结构化事实生成仲裁申请书草稿
+# 5. 生成案件时间线，便于核对事实顺序和证据节点
+node src/worker-aid-cli.mjs timeline examples/case-wage-arrears.json
+
+# 6. 基于结构化事实生成仲裁申请书草稿
 node src/worker-aid-cli.mjs draft arbitration examples/case-wage-arrears.json
 
-# 6. 导出可复核材料草稿
+# 7. 导出可复核材料草稿
 node src/worker-aid-cli.mjs export arbitration examples/case-wage-arrears.json exports/arbitration.html
 node src/worker-aid-cli.mjs export legal-aid-summary examples/case-wage-arrears.json exports/legal-aid-summary.md
 node src/worker-aid-cli.mjs export evidence-index examples/case-wage-arrears.json exports/evidence-index.doc

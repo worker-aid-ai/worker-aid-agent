@@ -1,3 +1,5 @@
+import { buildCaseTimeline } from '/src/lib/timeline.mjs';
+
 let minimumDataset;
 let currentCase;
 let currentDoc = '';
@@ -20,6 +22,7 @@ async function init() {
   $('downloadCase').addEventListener('click', () => download('worker-aid-case.json', JSON.stringify(buildCase(), null, 2), 'application/json'));
   $('calcOvertime').addEventListener('click', calcOvertime);
   $('lookupMinimum').addEventListener('click', lookupMinimum);
+  $('buildTimeline').addEventListener('click', buildTimeline);
   document.querySelectorAll('[data-doc]').forEach((button) => button.addEventListener('click', () => buildDoc(button.dataset.doc)));
   $('downloadMd').addEventListener('click', () => download('worker-aid-document.md', currentDoc || $('docOutput').value, 'text/markdown'));
   $('downloadHtml').addEventListener('click', () => download('worker-aid-document.html', wrapHtml(currentDoc || $('docOutput').value), 'text/html'));
@@ -32,10 +35,12 @@ function buildCase() {
     employer: { name: $('employerName').value || '【用人单位全称】' },
     facts: {
       startDate: $('startDate').value || '【入职日期】',
+      terminationDate: $('terminationDate').value || undefined,
       position: $('position').value || '【岗位】',
       monthlySalary: Number($('monthlySalary').value || 0),
       unpaidWages: Number($('unpaidWages').value || 0),
-      hasWrittenContract: hasContractValue === 'unknown' ? undefined : hasContractValue === 'true'
+      hasWrittenContract: hasContractValue === 'unknown' ? undefined : hasContractValue === 'true',
+      events: parseTimelineEvents($('timelineEvents').value)
     },
     claims: $('claims').value.split('\n').map((item) => item.trim()).filter(Boolean)
   };
@@ -74,6 +79,13 @@ function lookupMinimum() {
   }, null, 2);
 }
 
+function buildTimeline() {
+  const data = buildCase();
+  const timeline = buildCaseTimeline(data);
+  $('timelineOutput').textContent = JSON.stringify(timeline, null, 2);
+  $('timelineView').innerHTML = renderTimeline(timeline);
+}
+
 function buildDoc(kind) {
   const data = currentCase || buildCase();
   if (kind === 'arbitration') currentDoc = renderArbitration(data);
@@ -94,6 +106,22 @@ function renderLegalAidSummary(input) {
 
 function renderEvidenceIndex() {
   return `# 证据目录（草稿）\n\n| 序号 | 证据名称 | 证明目的 | 备注 |\n|---:|---|---|---|\n| 1 | 劳动合同/offer/入职记录 | 证明劳动关系 |  |\n| 2 | 工资条/银行流水 | 证明工资标准和实发金额 |  |\n| 3 | 考勤记录 | 证明出勤/加班 |  |\n| 4 | 催讨记录 | 证明欠薪和催讨过程 |  |\n`;
+}
+
+function parseTimelineEvents(value) {
+  return String(value || '').split('\n').map((line) => {
+    const [date, title, ...description] = line.split('|').map((item) => item.trim());
+    return { date, title, description: description.join(' | ') };
+  }).filter((event) => event.date || event.title || event.description);
+}
+
+function renderTimeline(timeline) {
+  const eventHtml = timeline.events.length
+    ? timeline.events.map((event) => `<article class="timeline-item"><time class="timeline-date">${escapeHtml(event.date)}</time><div><p class="timeline-title">${escapeHtml(event.title)}</p><p class="timeline-desc">${escapeHtml(event.description || '请补充事件经过、证据来源和对应材料编号。')}</p></div></article>`).join('')
+    : '<p class="timeline-warning">暂无有效日期事件。请至少填写入职日期，或按 YYYY-MM-DD | 事件 | 说明 的格式补充。</p>';
+  const reminders = timeline.reminders.map((item) => `<p class="timeline-warning">${escapeHtml(item)}</p>`).join('');
+  const warnings = timeline.warnings.map((item) => `<p class="timeline-warning">${escapeHtml(item)}</p>`).join('');
+  return `${eventHtml}${reminders}${warnings}`;
 }
 
 function wrapHtml(markdown) {

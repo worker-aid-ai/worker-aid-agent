@@ -24,6 +24,7 @@
         <label>用人单位<input id="employerName" placeholder="某科技有限公司" /></label>
         <label>岗位<input id="position" placeholder="前端开发" /></label>
         <label>入职日期<input id="startDate" type="date" /></label>
+        <label>解除/离职日期<input id="terminationDate" type="date" /></label>
         <label>月工资<input id="monthlySalary" type="number" placeholder="9000" /></label>
         <label>欠薪金额<input id="unpaidWages" type="number" placeholder="18000" /></label>
         <label>是否签书面劳动合同
@@ -62,7 +63,16 @@
     </section>
 
     <section class="card">
-      <h2>4. 文书草稿导出</h2>
+      <h2>4. 案件时间线</h2>
+      <p>按日期整理入职、欠薪、催讨、解除、投诉或仲裁等关键事件。不要为补齐时间线而编造日期或证据来源。</p>
+      <label>补充事件<textarea id="timelineEvents" placeholder="2025-04-10 | 工资开始异常 | 4 月工资延迟发放&#10;2025-11-05 | 第一次催讨工资 | 通过微信向主管催讨 10 月工资"></textarea></label>
+      <button id="buildTimeline">生成时间线</button>
+      <div id="timelineView" class="timeline" aria-live="polite"></div>
+      <pre id="timelineOutput"></pre>
+    </section>
+
+    <section class="card">
+      <h2>5. 文书草稿导出</h2>
       <p>基于案情 JSON 生成可复制的仲裁申请书、法律援助咨询摘要和证据目录草稿。</p>
       <div class="actions">
         <button data-doc="arbitration">生成仲裁申请书</button>
