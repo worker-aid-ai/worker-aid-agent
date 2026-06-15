@@ -1,5 +1,5 @@
 ---
-name: arbitration-application-drafter
+name: worker-aid-arbitration-application-drafter
 description: Use when structured labor-dispute facts and evidence need to become a draft labor arbitration application, claim list, facts-and-reasons section, or filing-preparation document
 ---
 

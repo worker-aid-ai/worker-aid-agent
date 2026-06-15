@@ -1,5 +1,5 @@
 ---
-name: wage-arrears-helper
+name: worker-aid-wage-arrears-helper
 description: Use when a worker reports unpaid wages, delayed wages, underpayment, missing commissions, unpaid allowances, payroll deductions, or wage-demand preparation
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: evidence-organizer
+name: worker-aid-evidence-organizer
 description: Use when labor-dispute evidence, screenshots, payroll records, attendance records, notices, recordings, or chat logs need to be cataloged for labor inspection, arbitration, legal aid, or lawyer review
 ---
 

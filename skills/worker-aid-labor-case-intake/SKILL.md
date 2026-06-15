@@ -1,5 +1,5 @@
 ---
-name: labor-case-intake
+name: worker-aid-labor-case-intake
 description: Use when a worker describes a labor dispute in natural language and the facts, dispute type, timeline, claims, or missing information need to be structured before legal-aid preparation
 ---
 

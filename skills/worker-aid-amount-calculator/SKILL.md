@@ -1,5 +1,5 @@
 ---
-name: amount-calculator
+name: worker-aid-amount-calculator
 description: Use when Chinese labor-dispute amounts need structured draft calculations for wage arrears, overtime, double wage for unsigned written contracts, economic compensation, or assumed illegal-termination compensation
 ---
 

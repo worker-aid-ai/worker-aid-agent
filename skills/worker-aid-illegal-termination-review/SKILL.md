@@ -1,5 +1,5 @@
 ---
-name: illegal-termination-review
+name: worker-aid-illegal-termination-review
 description: Use when a worker reports dismissal, forced resignation, layoff, contract termination, resignation agreement pressure, severance dispute, compensation, or possible illegal termination
 ---
 

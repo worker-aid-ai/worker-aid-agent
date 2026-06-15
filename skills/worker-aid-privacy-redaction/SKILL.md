@@ -1,5 +1,5 @@
 ---
-name: privacy-redaction
+name: worker-aid-privacy-redaction
 description: Use when worker case details, examples, issues, screenshots, contracts, chat records, payroll records, or public contributions may contain personal, employer, medical, bank, address, or account identifiers
 ---
 

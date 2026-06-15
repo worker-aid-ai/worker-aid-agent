@@ -1,5 +1,5 @@
 ---
-name: overtime-pay-helper
+name: worker-aid-overtime-pay-helper
 description: Use when a worker reports unpaid overtime, excessive hours, rest-day work, statutory-holiday work, comp time issues, attendance records, or overtime-pay estimation
 ---
 

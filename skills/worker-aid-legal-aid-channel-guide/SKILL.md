@@ -1,5 +1,5 @@
 ---
-name: legal-aid-channel-guide
+name: worker-aid-legal-aid-channel-guide
 description: Use when a worker needs preparation for legal aid, public legal service, labor union help, labor inspection, 12348, 12333, arbitration consultation, or local service-channel selection
 ---
 
