@@ -1,21 +1,21 @@
 ---
 name: worker-aid-wage-arrears-helper
-description: Use when a worker reports unpaid wages, delayed wages, underpayment, missing commissions, unpaid allowances, payroll deductions, or wage-demand preparation
+description: Use when a worker reports 欠薪、拖欠工资、少发工资、提成未付、补贴未付、工资扣发、离职工资未结清, or wage-demand preparation
 ---
 
-# Wage Arrears Helper
+# 拖欠工资处理
 
-## Overview
+## 概览
 
-Prepare wage-arrears facts, calculations, evidence, and draft claim materials. Treat all amounts as estimates that require document and local-rule review.
+帮助劳动者整理欠薪事实、逐月金额、证据和沟通/投诉/仲裁准备材料。所有金额都只是草算，必须结合工资记录、证据和本地规则复核。
 
-## When to Use
+## 适用场景
 
-- The user says wages, commissions, subsidies, reimbursements, or final pay were not paid in full or on time.
-- Monthly payable and actually paid amounts need to be reconciled.
-- The user needs materials for negotiation, labor inspection, arbitration, legal aid, or lawyer review.
+- 用户表示工资、提成、补贴、报销或离职结算未按时足额支付。
+- 需要逐月核对应发、实发和差额。
+- 用户需要协商、劳动监察、仲裁、法律援助或律师复核材料。
 
-## Key Questions
+## 重点问题
 
 - 欠薪发生在哪些月份？
 - 每月应发工资和实发工资是多少？
@@ -23,17 +23,17 @@ Prepare wage-arrears facts, calculations, evidence, and draft claim materials. T
 - 劳动关系是否还在存续？
 - 是否涉及解除或被迫离职？
 
-## Output
+## 输出要求
 
-- Month-by-month wage arrears table with payable, paid, and difference columns.
-- Evidence list for wage basis, payment history, and employer acknowledgment.
-- Demand/communication record summary.
-- Labor inspection complaint clues and arbitration claim draft, clearly marked as draft.
-- Calculation assumptions, missing facts, uncertainty, and human-review reminders.
+- 逐月欠薪明细表，包含应发、实发和差额。
+- 工资基数、支付记录和单位确认的证据清单。
+- 催讨和沟通记录摘要。
+- 劳动监察投诉线索和仲裁请求草稿，明确标注“草稿”。
+- 计算假设、缺失事实、不确定点和人工复核提醒。
 
-## Guardrails
+## 护栏
 
-- Calculate month by month; avoid a single unsupported total.
-- Do not promise the amount will be paid, mediated, or supported by arbitration.
-- Remind the user to verify limitation periods, local payment rules, employer entity, jurisdiction, and evidence sufficiency.
-- Cite official law or policy sources where possible; mark local-policy content with province/city and update date.
+- 金额必须逐月核算，避免只写一个缺少依据的总额。
+- 不承诺金额一定能追回、调解成功或被仲裁支持。
+- 提醒用户核验仲裁时效、地方工资支付规则、用人单位主体、管辖和证据充分性。
+- 尽可能引用官方法律或政策来源；本地政策内容必须标注省市和更新日期。

@@ -1,21 +1,21 @@
 ---
 name: worker-aid-overtime-pay-helper
-description: Use when a worker reports unpaid overtime, excessive hours, rest-day work, statutory-holiday work, comp time issues, attendance records, or overtime-pay estimation
+description: Use when a worker reports 加班费未付、超时工作、休息日加班、法定节假日加班、调休争议、考勤记录, or overtime-pay estimation
 ---
 
-# Overtime Pay Helper
+# 加班费估算
 
-## Overview
+## 概览
 
-Estimate overtime-pay differences and organize overtime evidence for review. Rates and wage bases are assumptions that must be verified against law, local practice, contract terms, and evidence.
+初步估算加班工资差额，并整理加班证据。倍率、工资基数和可支持性都只是待复核假设，必须结合现行法律、本地口径、合同约定和证据核验。
 
-## Common Estimation Rates
+## 常见估算倍率
 
 - 工作日延长工作时间：通常按 150% 估算；
 - 休息日加班且不能安排补休：通常按 200% 估算；
 - 法定休假日加班：通常按 300% 估算。
 
-## Required Inputs
+## 必要输入
 
 - 月工资或加班工资计算基数；
 - 工作日加班小时；
@@ -24,15 +24,15 @@ Estimate overtime-pay differences and organize overtime evidence for review. Rat
 - 已支付加班费；
 - 是否安排补休。
 
-## Output
+## 输出要求
 
-- Separate estimate rows for workday overtime, rest-day overtime, and statutory-holiday overtime.
-- Already-paid offset and resulting estimated difference.
-- Evidence checklist for attendance, schedules, approval, messages, work outputs, payroll, and rest-day compensatory leave.
-- Calculation assumptions, uncertain points, and human-review reminders.
+- 分别列出工作日延长工作时间、休息日加班和法定节假日加班的估算行。
+- 扣除已支付加班费，给出估算差额。
+- 整理考勤、排班、审批、聊天记录、工作成果、工资支付和调休记录证据清单。
+- 输出计算假设、不确定点和人工复核提醒。
 
-## Guardrails
+## 护栏
 
-- Do not assume every long workday is legally compensable overtime without supporting facts.
-- Do not ignore wage-base disputes, special working-hour systems, compensatory leave, local practice, or evidence gaps.
-- Remind the user to verify current national law, local rules, and official holiday arrangements.
+- 不把所有“工作时间长”直接认定为可支持的加班费。
+- 不忽略工资基数争议、特殊工时制、调休、本地口径和证据缺口。
+- 提醒用户核验现行国家法律、地方规则和官方节假日安排。
