@@ -2,7 +2,7 @@
 
 本项目采用接近 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 的格式记录重要变化。版本日期以仓库标签或明确发布记录为准；未打标签的版本会明确标注，避免误导使用者。
 
-## 0.2.0 - Unreleased
+## 0.2.0 - 2026-06-15
 
 ### Added
 
