@@ -1,15 +1,26 @@
-# 劳动争议案情采集 Skill
+---
+name: labor-case-intake
+description: Use when a worker describes a labor dispute in natural language and the facts, dispute type, timeline, claims, or missing information need to be structured before legal-aid preparation
+---
 
-## 目标
+# Labor Case Intake
 
-将用户口语化描述转为结构化案情，避免一上来就给结论。
+## Overview
 
-## 输入
+Turn a worker's informal description into structured case facts for review. Do not jump to legal conclusions, predict outcomes, or ask for unnecessary sensitive data.
 
-- 用户自然语言描述；
-- 可选：合同、工资、考勤、聊天记录的脱敏摘要。
+## When to Use
 
-## 输出结构
+- Initial intake for wage arrears, overtime pay, unsigned contract, termination, social insurance, work injury, or related disputes.
+- The user has mixed facts, dates, claims, and evidence in one narrative.
+- A later skill needs clean facts, a timeline, or missing-information questions.
+
+## Inputs
+
+- User's natural-language description.
+- Optional anonymized summaries of contracts, payroll, attendance, chat records, notices, or bank transfers.
+
+## Output
 
 ```json
 {
@@ -31,15 +42,20 @@
 }
 ```
 
-## 工作流程
+## Workflow
 
-1. 先确认劳动者所在城市、入职时间、岗位、工资、合同、社保、离职状态。
-2. 再识别争议类型：欠薪、未签合同、加班费、解除、社保、工伤等。
-3. 输出缺失事实和待补充问题。
-4. 不直接承诺能胜诉，不直接下最终法律结论。
+1. Identify city, work location, start date, end date or current status, position, wage basis, contract status, social insurance, and termination status.
+2. Classify dispute types without making final legal judgments.
+3. Build a dated timeline from known facts and label uncertain dates.
+4. List missing facts, urgent risks, and the next questions needed for human review.
 
-## 安全规则
+## Guardrails
 
-- 不要求用户在公开环境提供身份证号、完整手机号、住址。
-- 对涉及时效、金额、管辖的问题必须提示人工核验。
-- 不生成伪造证据的建议。
+- Do not request full ID numbers, complete phone numbers, exact home addresses, bank card numbers, or unredacted files in public contexts.
+- Include uncertainty and human-review reminders for limitation periods, amounts, jurisdiction, local policy, and claim strategy.
+- Never fabricate facts, evidence, statutes, professional identity, or expected results.
+
+## Official References
+
+- Prefer current official sources listed in `docs/LEGAL_BASIS.md` and `docs/DATA_SOURCES.md`.
+- For national law and policy checks, start with the National Laws and Regulations Database, China Government website, Ministry of Human Resources and Social Security channels, 12333, and 12348.

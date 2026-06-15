@@ -1,20 +1,32 @@
-# 隐私脱敏 Skill
+---
+name: privacy-redaction
+description: Use when worker case details, examples, issues, screenshots, contracts, chat records, payroll records, or public contributions may contain personal, employer, medical, bank, address, or account identifiers
+---
 
-## 目标
+# Privacy Redaction
 
-在公开提问、提交 Issue、贡献案例前，帮助用户脱敏。
+## Overview
 
-## 脱敏规则
+Redact sensitive information before public questions, issues, examples, or case contributions. Preserve legally useful context while removing identifiers that can expose the worker, employer staff, witnesses, or account data.
 
-- 姓名：张三 → 劳动者A；
-- 手机：13800138000 → 138****8000；
-- 身份证：4403xxxxxxxxxxxx → 4403************；
-- 公司：深圳市某某科技有限公司 → 深圳某科技公司；
-- 地址：保留到省市区，不公开门牌号；
-- 银行卡、病历号、账号、合同编号：默认隐藏。
+## Redaction Rules
 
-## 输出
+- Name: 张三 -> 劳动者A.
+- Phone: 13800138000 -> 138****8000.
+- ID number: 4403xxxxxxxxxxxx -> 4403************.
+- Employer: 深圳市某某科技有限公司 -> 深圳某科技公司.
+- Address: keep province/city/district if needed; remove street number, room, and exact location.
+- Bank card, medical record number, account ID, contract number, internal file number: hide by default.
 
-- 脱敏后的文本；
-- 残留敏感信息检查；
-- 不建议公开的内容列表。
+## Output
+
+- Redacted text.
+- Residual sensitive-information checklist.
+- List of content that should not be posted publicly.
+- Note on whether enough location/time context remains for legal or policy review.
+
+## Guardrails
+
+- Do not invent replacement facts that change the legal meaning.
+- For examples and public datasets, ensure cases are fully anonymized.
+- When unsure, prefer masking more detail and ask the user to keep originals offline for professional review.

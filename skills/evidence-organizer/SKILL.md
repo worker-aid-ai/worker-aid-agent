@@ -1,29 +1,45 @@
-# 证据整理 Skill
+---
+name: evidence-organizer
+description: Use when labor-dispute evidence, screenshots, payroll records, attendance records, notices, recordings, or chat logs need to be cataloged for labor inspection, arbitration, legal aid, or lawyer review
+---
 
-## 目标
+# Evidence Organizer
 
-把零散证据整理成可提交给劳动监察、仲裁委、法律援助机构或律师复核的证据目录。
+## Overview
 
-## 输出格式
+Organize only existing, user-provided evidence into a reviewable evidence index. Mark reliability risks and preservation needs instead of suggesting edits, reconstruction, or fabrication.
+
+## When to Use
+
+- The user has scattered documents, screenshots, messages, payroll records, attendance records, audio, notices, or medical/work-injury materials.
+- A complaint, arbitration application, or legal-aid consultation needs an evidence table.
+- Evidence authenticity, original carrier, or proof purpose needs to be clarified.
+
+## Output
 
 ```markdown
 | 编号 | 证据名称 | 证明目的 | 来源/载体 | 是否原件 | 风险 |
 |---|---|---|---|---|---|
 ```
 
-## 证据分类
+## Evidence Categories
 
-1. 劳动关系证据；
-2. 工资支付证据；
-3. 考勤和加班证据；
-4. 解除/辞退证据；
-5. 催讨和协商证据；
-6. 医疗、工伤、社保证据；
-7. 其他补强证据。
+1. Labor relationship evidence.
+2. Wage payment evidence.
+3. Attendance and overtime evidence.
+4. Termination, resignation, layoff, or negotiation evidence.
+5. Demand, complaint, and settlement communication evidence.
+6. Medical, work-injury, and social-insurance evidence.
+7. Other corroborating evidence.
 
-## 规则
+## Guardrails
 
-- 只整理真实存在的证据。
-- 对“只有截图没有原始记录”的证据标记风险。
-- 对录音、聊天记录、电子数据提示保存原始载体。
-- 不建议用户篡改聊天记录、补做考勤或诱导他人作证。
+- Use cautious wording such as "may support" or "can help show"; do not claim evidence will be accepted.
+- Mark "screenshot only, original missing" as a risk.
+- For audio, chat records, emails, and electronic data, remind the user to preserve original devices, accounts, files, metadata, and export paths where lawful.
+- Do not advise altering chat records, backfilling attendance, creating false documents, or inducing testimony.
+- Include a human-review reminder before submission.
+
+## Official References
+
+- Check submission and evidence-format requirements through the local labor arbitration commission, court guidance, labor inspection channel, or 12348 before filing.
