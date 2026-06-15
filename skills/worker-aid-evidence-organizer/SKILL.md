@@ -1,45 +1,45 @@
 ---
 name: worker-aid-evidence-organizer
-description: Use when labor-dispute evidence, screenshots, payroll records, attendance records, notices, recordings, or chat logs need to be cataloged for labor inspection, arbitration, legal aid, or lawyer review
+description: Use when labor-dispute evidence such as 截图、工资条、银行流水、考勤记录、解除通知、录音、聊天记录 need a 证据目录 for labor inspection, arbitration, legal aid, or lawyer review
 ---
 
-# Evidence Organizer
+# 证据整理
 
-## Overview
+## 概览
 
-Organize only existing, user-provided evidence into a reviewable evidence index. Mark reliability risks and preservation needs instead of suggesting edits, reconstruction, or fabrication.
+只把用户已经真实持有或能够合法取得的材料整理为可复核的证据目录。重点标记证明目的、原始载体、证据风险和保存要求，不建议修改、补做或伪造证据。
 
-## When to Use
+## 适用场景
 
-- The user has scattered documents, screenshots, messages, payroll records, attendance records, audio, notices, or medical/work-injury materials.
-- A complaint, arbitration application, or legal-aid consultation needs an evidence table.
-- Evidence authenticity, original carrier, or proof purpose needs to be clarified.
+- 用户有零散合同、截图、工资条、银行流水、考勤、录音、通知、医疗或工伤材料。
+- 投诉、仲裁申请、法律援助咨询或律师复核需要证据目录。
+- 需要说明证据真实性、原始载体、证明目的或风险。
 
-## Output
+## 输出格式
 
 ```markdown
 | 编号 | 证据名称 | 证明目的 | 来源/载体 | 是否原件 | 风险 |
 |---|---|---|---|---|---|
 ```
 
-## Evidence Categories
+## 证据分类
 
-1. Labor relationship evidence.
-2. Wage payment evidence.
-3. Attendance and overtime evidence.
-4. Termination, resignation, layoff, or negotiation evidence.
-5. Demand, complaint, and settlement communication evidence.
-6. Medical, work-injury, and social-insurance evidence.
-7. Other corroborating evidence.
+1. 劳动关系证据。
+2. 工资支付证据。
+3. 考勤和加班证据。
+4. 解除、辞退、离职、裁员或协商证据。
+5. 催讨、投诉、协商和和解沟通证据。
+6. 医疗、工伤和社保证据。
+7. 其他补强证据。
 
-## Guardrails
+## 护栏
 
-- Use cautious wording such as "may support" or "can help show"; do not claim evidence will be accepted.
-- Mark "screenshot only, original missing" as a risk.
-- For audio, chat records, emails, and electronic data, remind the user to preserve original devices, accounts, files, metadata, and export paths where lawful.
-- Do not advise altering chat records, backfilling attendance, creating false documents, or inducing testimony.
-- Include a human-review reminder before submission.
+- 使用“可能用于证明”“可辅助说明”等谨慎表述，不声称证据一定会被采纳。
+- 对“只有截图、没有原始记录”的材料标记风险。
+- 对录音、聊天记录、邮件和电子数据，提示在合法前提下保存原始设备、账号、文件、元数据和导出路径。
+- 不建议篡改聊天记录、补做考勤、制作虚假文件或诱导他人作证。
+- 提交前必须提示人工复核。
 
-## Official References
+## 官方来源
 
-- Check submission and evidence-format requirements through the local labor arbitration commission, court guidance, labor inspection channel, or 12348 before filing.
+- 提交前通过当地仲裁委、法院指引、劳动监察渠道或 12348 核验材料和证据格式要求。

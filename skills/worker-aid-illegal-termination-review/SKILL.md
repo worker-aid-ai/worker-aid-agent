@@ -1,21 +1,21 @@
 ---
 name: worker-aid-illegal-termination-review
-description: Use when a worker reports dismissal, forced resignation, layoff, contract termination, resignation agreement pressure, severance dispute, compensation, or possible illegal termination
+description: Use when a worker reports 辞退、被迫离职、解除劳动合同、裁员、离职协议压力、经济补偿、赔偿金 2N, severance dispute, or possible illegal termination
 ---
 
-# Illegal Termination Review
+# 违法解除/辞退初筛
 
-## Overview
+## 概览
 
-Screen termination facts for preparation and human review. Do not decide legality; organize facts, possible claim directions, evidence, and uncertainty.
+用于整理解除或辞退相关事实，供后续咨询、投诉、仲裁或专业复核。不要直接判断“必然违法”，而是整理事实、可能诉求方向、证据和不确定点。
 
-## When to Use
+## 适用场景
 
-- The user was fired, asked to resign, laid off, pressured to sign documents, or had the contract ended.
-- The user asks about compensation, severance, 2N, continued performance, or resignation agreement risk.
-- Termination reason, procedure, evidence, or signed documents are unclear.
+- 用户被辞退、被要求主动离职、被裁员、被要求签文件，或劳动合同被解除/终止。
+- 用户询问经济补偿、赔偿金 2N、继续履行、离职协议风险。
+- 解除理由、程序、证据或已签文件不清楚。
 
-## Key Questions
+## 关键问题
 
 - 是口头辞退还是书面解除？
 - 解除理由是什么？
@@ -23,16 +23,16 @@ Screen termination facts for preparation and human review. Do not decide legalit
 - 用户是否签署离职协议、离职申请、款项结清文件？
 - 用户希望继续履行还是请求赔偿/补偿？
 
-## Output
+## 输出要求
 
-- Termination timeline with dates, speakers, documents, and disputed facts.
-- Evidence list covering notice, chat/audio, performance records, rules, meetings, resignation papers, settlement records, and payment records.
-- Claim-direction notes such as continued performance, economic compensation, or alleged illegal-termination compensation, framed as options for review.
-- Questions that need lawyer, legal-aid, labor union, labor inspection, or arbitration staff review.
+- 解除事实时间线，标明日期、沟通对象、文件和争议事实。
+- 证据清单，覆盖通知、聊天/录音、绩效记录、规章制度、会议记录、离职材料、结算记录和支付记录。
+- 诉求方向提示，例如继续履行、经济补偿、假设违法解除下的赔偿金，均作为待复核选项。
+- 需要律师、法律援助、工会、劳动监察或仲裁工作人员复核的问题。
 
-## Guardrails
+## 护栏
 
-- Do not label termination as "definitely illegal" or promise N/2N support.
-- If estimating 2N, state it is only under the assumption that the termination is later found illegal.
-- Warn about signing resignation, settlement, waiver, or final payment documents without understanding consequences.
-- Include limitation-period, jurisdiction, evidence, and local-policy uncertainty reminders.
+- 不直接认定解除“必然违法”，不承诺 N/2N 一定获得支持。
+- 如果估算 2N，必须说明仅限“解除后续被认定违法”的假设前提。
+- 对离职申请、离职协议、放弃权利条款、款项结清文件提示签署风险。
+- 必须提醒仲裁时效、管辖、证据、本地政策和人工复核。
