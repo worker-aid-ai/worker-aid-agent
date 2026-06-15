@@ -60,3 +60,24 @@ node src/worker-aid-cli.mjs draft arbitration examples/case-wage-arrears.json
 ```
 
 输出仅为草稿，提交前应核验当地仲裁委表格要求、主体信息、证据编号、请求金额和法律依据。
+
+## 7. v0.3 安全增强命令
+
+```bash
+# 本地法条索引检索
+node src/worker-aid-cli.mjs law-search 拖欠工资 仲裁时效
+
+# 本地化政策入口索引
+node src/worker-aid-cli.mjs local-policy 深圳 欠薪
+
+# 风险输出检查
+node src/worker-aid-cli.mjs risk-check exports/legal-aid-summary.md
+
+# 多模型评测集摘要
+node src/worker-aid-cli.mjs eval-set
+
+# 社区案例脱敏
+node src/worker-aid-cli.mjs anonymize-case examples/case-wage-arrears.json
+```
+
+以上命令都只用于材料整理、安全检查和官方核验入口提示，不构成法律意见。涉及地方政策时，应以省/市官方渠道的最新公开信息为准；公开案例前必须人工复核脱敏结果。

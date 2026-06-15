@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "0.3.0",
+  "datasetId": "cn-local-labor-policy-index",
+  "name": "中国劳动者本地化政策索引（启动版）",
+  "lastReviewed": "2026-06-15",
+  "importantNotice": [
+    "本索引只记录本地政策检索入口、关键词和核验路径，不直接替代当地最新政策文本。",
+    "地方政策、办事材料、线上入口和裁审口径可能变化，使用前请通过当地官方渠道二次核验。",
+    "涉及具体案件时，应由法律援助机构、仲裁委、工会、劳动监察或专业人士复核。"
+  ],
+  "records": [
+    {
+      "id": "guangdong-shenzhen-wage-arrears-portals",
+      "province": "广东",
+      "city": "深圳",
+      "topics": ["欠薪", "劳动监察", "劳动仲裁", "法律援助"],
+      "updatedAt": "2026-06-15",
+      "summary": "深圳地区欠薪、劳动监察投诉、劳动仲裁和法律援助咨询应优先通过 12333、12348、全国人社政务服务平台、中国法律服务网及当地人社/司法行政/仲裁委官方入口核验。",
+      "officialSources": [
+        { "name": "全国人社政务服务平台", "url": "https://www.12333.gov.cn/" },
+        { "name": "中国法律服务网", "url": "https://www.12348.gov.cn/" },
+        { "name": "广东政务服务网", "url": "https://www.gdzwfw.gov.cn/" },
+        { "name": "深圳市人力资源和社会保障局", "url": "https://hrss.sz.gov.cn/" }
+      ],
+      "searchKeywords": [
+        "深圳 欠薪 投诉 官方",
+        "深圳 劳动保障监察 投诉举报",
+        "深圳 劳动人事争议仲裁 申请 材料",
+        "深圳 法律援助 12348"
+      ],
+      "verificationStatus": "official_entry_index_only"
+    },
+    {
+      "id": "guangdong-province-labor-help-portals",
+      "province": "广东",
+      "city": "",
+      "topics": ["欠薪", "最低工资", "劳动监察", "法律援助"],
+      "updatedAt": "2026-06-15",
+      "summary": "广东省内劳动报酬、最低工资、劳动监察和法律援助事项应以广东省级政务服务、人社、司法行政及全国官方入口的最新公开信息为准。",
+      "officialSources": [
+        { "name": "广东政务服务网", "url": "https://www.gdzwfw.gov.cn/" },
+        { "name": "广东省人力资源和社会保障厅", "url": "https://hrss.gd.gov.cn/" },
+        { "name": "中国法律服务网", "url": "https://www.12348.gov.cn/" }
+      ],
+      "searchKeywords": [
+        "广东 最低工资 标准 官方",
+        "广东 劳动保障监察 投诉举报",
+        "广东 法律援助 12348"
+      ],
+      "verificationStatus": "official_entry_index_only"
+    },
+    {
+      "id": "national-labor-law-help-portals",
+      "province": "全国",
+      "city": "",
+      "topics": ["法条", "劳动争议", "法律援助", "劳动监察"],
+      "updatedAt": "2026-06-15",
+      "summary": "全国通用的劳动法律、法律援助和人社服务信息，应优先通过全国人大法律法规数据库、中国政府网、全国人社政务服务平台和中国法律服务网核验。",
+      "officialSources": [
+        { "name": "全国人大法律法规数据库", "url": "https://flk.npc.gov.cn/" },
+        { "name": "中国政府网", "url": "https://www.gov.cn/" },
+        { "name": "全国人社政务服务平台", "url": "https://www.12333.gov.cn/" },
+        { "name": "中国法律服务网", "url": "https://www.12348.gov.cn/" }
+      ],
+      "searchKeywords": [
+        "劳动合同法 全国人大法律法规数据库",
+        "劳动争议调解仲裁法 全国人大法律法规数据库",
+        "法律援助 12348"
+      ],
+      "verificationStatus": "official_entry_index_only"
+    }
+  ]
+}

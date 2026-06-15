@@ -2,6 +2,27 @@
 
 本项目采用接近 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 的格式记录重要变化。版本日期以仓库标签或明确发布记录为准；未打标签的版本会明确标注，避免误导使用者。
 
+## 0.3.0 - Unreleased
+
+### Added
+
+- 新增本地 RAG 法条检索启动版，基于 `data/law-basis.json` 返回主题、条文提示、摘要和官方核验渠道。
+- 新增本地化政策索引 `data/local-policy-index-cn.json`，记录省/市、更新时间、官方入口和检索关键词。
+- 新增多模型评测集启动版 `data/model-evaluation-set.json`，覆盖免责声明、人工复核、不伪造证据、不承诺结果和隐私脱敏检查。
+- 新增风险输出拦截器，检查冒充法律专业人士、承诺结果、伪造证据和缺少人工复核提醒等高风险内容。
+- 新增社区案例脱敏工具与贡献流程文档，支持案情 JSON 的启动版自动脱敏和人工复核提醒。
+
+### Changed
+
+- CLI 新增 `law-search`、`local-policy`、`risk-check`、`eval-set` 和 `anonymize-case` 命令。
+- `pnpm run validate` 扩展为检查 v0.3 数据、文档和安全模块入口。
+- 包版本更新为 `0.3.0`。
+
+### Notes
+
+- v0.3 的法条和政策能力是本地索引启动版，不替代官方最新文本或专业人士复核。
+- 自动脱敏和风险检查只做辅助筛查，公开或提交前仍需人工复核。
+
 ## 0.2.0 - 2026-06-15
 
 ### Added

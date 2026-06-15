@@ -1,9 +1,12 @@
 # 数据源与更新说明
 
-本项目新增两个启动版数据文件：
+本项目维护以下启动版数据文件：
 
 - `data/minimum-wage-cn-2025.json`：中国大陆各地区最低工资标准启动版数据。
 - `data/service-portals-cn.json`：法律援助、劳动监察/人社服务、仲裁入口索引。
+- `data/law-basis.json`：常见劳动争议主题的本地法条检索索引。
+- `data/local-policy-index-cn.json`：本地化政策入口、关键词和官方核验路径索引。
+- `data/model-evaluation-set.json`：多模型输出安全性和一致性评测集启动版。
 
 ## 重要边界
 
@@ -25,7 +28,9 @@
 2. 对最低工资：优先核验省级人社厅/人社局官网、政府公报、12333 平台。
 3. 对法律援助：优先核验省级司法厅/司法局、法律援助中心、中国法律服务网。
 4. 对劳动监察：优先核验省级/市级人社局“劳动保障监察”“欠薪投诉举报”“根治欠薪”栏目。
-5. 更新时必须记录：`sourceUrl`、`effectiveDate`、`lastReviewed`、`reviewer`、`verificationStatus`。
+5. 对法条索引：优先核验全国人大法律法规数据库、中国政府网和主管部门公开信息。
+6. 对本地政策索引：必须记录省/市、更新时间、官方入口、检索关键词和核验状态。
+7. 更新时必须记录：`sourceUrl`、`effectiveDate` 或 `updatedAt`、`lastReviewed`、`reviewer`、`verificationStatus`。
 
 ## 后续可自动化方向
 

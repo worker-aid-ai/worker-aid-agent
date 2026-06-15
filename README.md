@@ -84,10 +84,19 @@ node src/worker-aid-cli.mjs minimum-wage 深圳
 # 5. 生成案件时间线，便于核对事实顺序和证据节点
 node src/worker-aid-cli.mjs timeline examples/case-wage-arrears.json
 
-# 6. 基于结构化事实生成仲裁申请书草稿
+# 6. 检索本地法条索引和本地化政策入口，提交前仍需官方核验
+node src/worker-aid-cli.mjs law-search 拖欠工资 仲裁时效
+node src/worker-aid-cli.mjs local-policy 深圳 欠薪
+
+# 7. 检查高风险输出、查看评测集摘要、生成社区案例脱敏稿
+node src/worker-aid-cli.mjs risk-check exports/legal-aid-summary.md
+node src/worker-aid-cli.mjs eval-set
+node src/worker-aid-cli.mjs anonymize-case examples/case-wage-arrears.json
+
+# 8. 基于结构化事实生成仲裁申请书草稿
 node src/worker-aid-cli.mjs draft arbitration examples/case-wage-arrears.json
 
-# 7. 导出可复核材料草稿
+# 9. 导出可复核材料草稿
 node src/worker-aid-cli.mjs export arbitration examples/case-wage-arrears.json exports/arbitration.html
 node src/worker-aid-cli.mjs export legal-aid-summary examples/case-wage-arrears.json exports/legal-aid-summary.md
 node src/worker-aid-cli.mjs export evidence-index examples/case-wage-arrears.json exports/evidence-index.doc
@@ -97,7 +106,7 @@ node src/worker-aid-cli.mjs export evidence-index examples/case-wage-arrears.jso
 
 - `web/`：本地静态 Web 表单界面，用于采集案情、估算金额、生成材料草稿。
 - `src/`：零运行依赖 Node.js CLI 原型。
-- `data/`：常见争议类型、证据清单、法律依据索引、最低工资和服务入口启动版数据。
+- `data/`：常见争议类型、证据清单、法律依据索引、本地政策索引、评测集、最低工资和服务入口启动版数据。
 - `templates/`：劳动争议常用材料草稿模板。
 - `skills/`：面向 AI Agent / Skill 平台的技能定义。
 - `agents/`：面向多 Agent 编排的角色说明。
@@ -120,6 +129,8 @@ pnpm run serve:web
 - [Web 表单界面说明](docs/WEB_UI.md)
 - [数据源与更新说明](docs/DATA_SOURCES.md)
 - [金额计算与测试说明](docs/CALCULATION_TESTS.md)
+- [安全与评测功能说明](docs/SAFETY_AND_EVALUATION.md)
+- [社区案例脱敏贡献流程](docs/COMMUNITY_CASE_CONTRIBUTION.md)
 - [项目章程](docs/PROJECT_CHARTER.md)
 
 ## 项目结构

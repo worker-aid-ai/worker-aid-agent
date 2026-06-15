@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { readFile } from 'node:fs/promises';
 import { classifyCase, loadJson, printJson } from './lib/core.mjs';
 import { getChecklist } from './lib/checklists.mjs';
 import { calculateOvertimePay } from './lib/overtime.mjs';
@@ -12,6 +13,11 @@ import { lookupMinimumWage } from './lib/minimum-wage.mjs';
 import { renderArbitrationDraft } from './lib/drafts.mjs';
 import { exportDocument } from './lib/exporters.mjs';
 import { buildCaseTimeline } from './lib/timeline.mjs';
+import { searchLawBasis } from './lib/legal-search.mjs';
+import { lookupLocalPolicies } from './lib/local-policy.mjs';
+import { scanOutputRisk } from './lib/risk-guard.mjs';
+import { summarizeEvaluationSet } from './lib/evaluation-set.mjs';
+import { anonymizeCommunityCase } from './lib/anonymize.mjs';
 
 const [, , command, ...args] = process.argv;
 
@@ -51,6 +57,33 @@ async function main() {
       const file = required(args[0], '请提供案情 JSON 文件路径');
       const input = await loadJson(file);
       printJson(buildCaseTimeline(input));
+      break;
+    }
+    case 'law-search': {
+      const query = required(args.join(' '), '请提供法条检索关键词');
+      printJson(await searchLawBasis(query));
+      break;
+    }
+    case 'local-policy': {
+      const region = required(args[0], '请提供地区，例如 深圳、广东 或 全国');
+      const topic = args.slice(1).join(' ');
+      printJson(await lookupLocalPolicies(region, topic));
+      break;
+    }
+    case 'risk-check': {
+      const file = required(args[0], '请提供待检查文本文件路径');
+      const text = await readFile(file, 'utf-8');
+      printJson(scanOutputRisk(text));
+      break;
+    }
+    case 'eval-set': {
+      printJson(await summarizeEvaluationSet());
+      break;
+    }
+    case 'anonymize-case': {
+      const file = required(args[0], '请提供待脱敏案情 JSON 文件路径');
+      const input = await loadJson(file);
+      printJson(anonymizeCommunityCase(input));
       break;
     }
     case 'draft': {
@@ -99,7 +132,7 @@ function required(value, message) {
 }
 
 function printHelp() {
-  console.log(`Worker Aid Agent CLI\n\nUsage:\n  node src/worker-aid-cli.mjs classify <case.json>\n  node src/worker-aid-cli.mjs checklist <scenario_id>\n  node src/worker-aid-cli.mjs overtime <overtime.json>\n  node src/worker-aid-cli.mjs amount <kind> <amount-input.json>\n  node src/worker-aid-cli.mjs minimum-wage <region> [tier]\n  node src/worker-aid-cli.mjs timeline <case.json>\n  node src/worker-aid-cli.mjs draft arbitration <case.json>\n  node src/worker-aid-cli.mjs export <kind> <case.json> <output.md|html|doc>\n\nAmount kinds:\n  wage-arrears | double-wage | economic-compensation | illegal-termination\n\nExamples:\n  node src/worker-aid-cli.mjs minimum-wage 深圳\n  node src/worker-aid-cli.mjs timeline examples/case-wage-arrears.json\n  node src/worker-aid-cli.mjs amount wage-arrears examples/amount-wage-arrears.json\n  node src/worker-aid-cli.mjs export arbitration examples/case-wage-arrears.json exports/arbitration.html\n`);
+  console.log(`Worker Aid Agent CLI\n\nUsage:\n  node src/worker-aid-cli.mjs classify <case.json>\n  node src/worker-aid-cli.mjs checklist <scenario_id>\n  node src/worker-aid-cli.mjs overtime <overtime.json>\n  node src/worker-aid-cli.mjs amount <kind> <amount-input.json>\n  node src/worker-aid-cli.mjs minimum-wage <region> [tier]\n  node src/worker-aid-cli.mjs timeline <case.json>\n  node src/worker-aid-cli.mjs law-search <keywords>\n  node src/worker-aid-cli.mjs local-policy <region> [topic]\n  node src/worker-aid-cli.mjs risk-check <text-file>\n  node src/worker-aid-cli.mjs eval-set\n  node src/worker-aid-cli.mjs anonymize-case <case.json>\n  node src/worker-aid-cli.mjs draft arbitration <case.json>\n  node src/worker-aid-cli.mjs export <kind> <case.json> <output.md|html|doc>\n\nAmount kinds:\n  wage-arrears | double-wage | economic-compensation | illegal-termination\n\nExamples:\n  node src/worker-aid-cli.mjs minimum-wage 深圳\n  node src/worker-aid-cli.mjs timeline examples/case-wage-arrears.json\n  node src/worker-aid-cli.mjs law-search 拖欠工资 仲裁时效\n  node src/worker-aid-cli.mjs local-policy 深圳 欠薪\n  node src/worker-aid-cli.mjs anonymize-case examples/case-wage-arrears.json\n  node src/worker-aid-cli.mjs amount wage-arrears examples/amount-wage-arrears.json\n  node src/worker-aid-cli.mjs export arbitration examples/case-wage-arrears.json exports/arbitration.html\n`);
 }
 
 main().catch((error) => {
