@@ -7,3 +7,5 @@ coverage/
 *.local
 case-data-private/
 private/
+docs/superpowers
+settings.local.json
