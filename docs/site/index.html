@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Worker Aid Agent 中文文档</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="topbar" aria-label="主导航">
+        <a class="brand" href="../../README.md">
+          <img src="../../assets/avatar.png" alt="" width="36" height="36">
+          <span>Worker Aid Agent 中文文档</span>
+        </a>
+        <a href="../../README.md">项目首页</a>
+        <a href="../ROADMAP.md">路线图</a>
+        <a href="../../CONTRIBUTING.md">贡献指南</a>
+      </nav>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">劳动者自助与法律援助准备</p>
+          <h1 id="page-title">Worker Aid Agent 中文文档</h1>
+          <p>
+            面向劳动者、公益协作者和开源维护者的本地化文档入口。这里汇总案情整理、证据清单、金额估算、Agent 协议、Skill 包结构、隐私安全和协作指南。
+          </p>
+        </div>
+        <label class="search">
+          <span>筛选文档</span>
+          <input data-doc-search type="search" placeholder="输入关键词，例如 Agent、证据、协作">
+        </label>
+      </section>
+    </header>
+
+    <main>
+      <section class="doc-section" aria-labelledby="quickstart-title">
+        <h2 id="quickstart-title">快速开始</h2>
+        <div class="doc-grid">
+          <article class="doc-card primary" data-doc-card>
+            <h3><a href="../../README.md">项目首页</a></h3>
+            <p>了解项目定位、适用人群、本地 Web UI、CLI 用法和开源协作原则。</p>
+          </article>
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../USAGE.md">使用指南</a></h3>
+            <p>从案情 JSON、分类、证据清单、时间线、法条检索到文书草稿的本地使用流程。</p>
+          </article>
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../WEB_UI.md">Web 表单界面</a></h3>
+            <p>了解本地静态 Web 表单的输入、输出和安全边界。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="doc-section" aria-labelledby="v1-title">
+        <h2 id="v1-title">v1.0 规范</h2>
+        <div class="doc-grid">
+          <article class="doc-card primary" data-doc-card>
+            <h3><a href="../AGENT_PROTOCOL.md">Agent 协议</a></h3>
+            <p>稳定输入输出契约、Agent 路由、安全护栏、官方来源和人工复核规则。</p>
+          </article>
+          <article class="doc-card primary" data-doc-card>
+            <h3><a href="../SKILL_PACKAGE_STRUCTURE.md">Skill 包结构</a></h3>
+            <p>Skill 目录、frontmatter、必备章节、输出结构、安全边界和质量检查要求。</p>
+          </article>
+          <article class="doc-card primary" data-doc-card>
+            <h3><a href="../COLLABORATION_GUIDE.md">协作指南</a></h3>
+            <p>法律援助机构、公益律师、工会志愿者和社区互助者的材料流转与禁止事项。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="doc-section" aria-labelledby="safety-title">
+        <h2 id="safety-title">安全与数据</h2>
+        <div class="doc-grid">
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../LEGAL_DISCLAIMER.md">法律与使用免责声明</a></h3>
+            <p>说明本项目不是律师、机构或结果承诺工具，所有输出都需要人工复核。</p>
+          </article>
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../PRIVACY_AND_SAFETY.md">隐私与安全规则</a></h3>
+            <p>公开材料脱敏、敏感信息保护、证据真实性和风险行为边界。</p>
+          </article>
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../DATA_SOURCES.md">数据源与更新说明</a></h3>
+            <p>最低工资、服务入口、法条索引、本地政策索引和评测集的数据维护要求。</p>
+          </article>
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../LEGAL_BASIS.md">常见法律依据索引</a></h3>
+            <p>常见劳动争议法律依据入口，提交材料前仍应通过官方渠道核验。</p>
+          </article>
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../SAFETY_AND_EVALUATION.md">安全与评测功能</a></h3>
+            <p>风险输出拦截、多模型评测集和社区案例脱敏流程说明。</p>
+          </article>
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../COMMUNITY_CASE_CONTRIBUTION.md">社区案例贡献流程</a></h3>
+            <p>公开案例贡献前的脱敏、复核和安全边界。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="doc-section" aria-labelledby="dev-title">
+        <h2 id="dev-title">开发与维护</h2>
+        <div class="doc-grid">
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../PROJECT_CHARTER.md">项目章程</a></h3>
+            <p>项目使命、边界和设计原则。</p>
+          </article>
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../CALCULATION_TESTS.md">金额计算与测试</a></h3>
+            <p>工资、二倍工资差额、经济补偿和违法解除赔偿的测试说明。</p>
+          </article>
+          <article class="doc-card" data-doc-card>
+            <h3><a href="../../CONTRIBUTING.md">贡献指南</a></h3>
+            <p>贡献代码、文档、数据和案例时的流程与护栏。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>所有文档仅用于材料整理和公开信息导航，不构成法律意见。事实、证据、金额、时效、管辖和地方政策应由人工复核。</p>
+    </footer>
+
+    <script src="site.js"></script>
+  </body>
+</html>

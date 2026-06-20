@@ -125,12 +125,16 @@ pnpm run serve:web
 常用开发文档：
 
 - [贡献指南](CONTRIBUTING.md)
+- [中文文档站](docs/site/index.html)
 - [使用指南](docs/USAGE.md)
 - [Web 表单界面说明](docs/WEB_UI.md)
 - [数据源与更新说明](docs/DATA_SOURCES.md)
 - [金额计算与测试说明](docs/CALCULATION_TESTS.md)
 - [安全与评测功能说明](docs/SAFETY_AND_EVALUATION.md)
 - [社区案例脱敏贡献流程](docs/COMMUNITY_CASE_CONTRIBUTION.md)
+- [Worker Aid Agent 协议](docs/AGENT_PROTOCOL.md)
+- [Worker Aid Skill 包结构](docs/SKILL_PACKAGE_STRUCTURE.md)
+- [法律援助、公益律师与工会志愿者协作指南](docs/COLLABORATION_GUIDE.md)
 - [项目章程](docs/PROJECT_CHARTER.md)
 
 ## 项目结构
