@@ -1,5 +1,30 @@
 # 使用指南
 
+## 0. 普通用户本地 App
+
+普通劳动者优先使用本地 App，而不是先学习 CLI 或插件安装。页面会引导填写脱敏案情、配置可选模型 API、确认隐私边界并导出材料草稿。
+
+Windows PowerShell：
+
+```powershell
+.\start-worker-aid.ps1
+```
+
+通用方式：
+
+```bash
+pnpm install
+pnpm run start:app
+```
+
+打开：
+
+```text
+http://localhost:5173/
+```
+
+模型 API 配置是可选项。没有用户勾选确认时，本地 App 不允许外部模型调用；即使确认调用，也只应发送必要且已脱敏的摘要。
+
 ## 1. 准备案情 JSON
 
 参考 `examples/case-wage-arrears.json`：

@@ -1,6 +1,6 @@
 {
   "name": "worker-aid-agent",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "packageManager": "pnpm@11.1.2",
   "description": "Open-source AI agents and skills for Chinese workers' rights self-help, evidence organization, and legal-aid preparation.",
   "type": "module",
@@ -17,6 +17,7 @@
     "export": "node src/worker-aid-cli.mjs export",
     "validate": "node src/validate.mjs",
     "test": "node --test tests/*.test.mjs",
+    "start:app": "node src/serve-web.mjs",
     "serve:web": "node src/serve-web.mjs",
     "data:update": "node scripts/update-data-sources.mjs"
   },

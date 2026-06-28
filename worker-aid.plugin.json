@@ -1,0 +1,31 @@
+{
+  "id": "worker-aid-agent",
+  "name": "Worker Aid Agent",
+  "description": "Chinese workers' rights self-help, evidence organization, and legal-aid preparation skills for professional collaborators.",
+  "version": "1.0.0",
+  "skills": [
+    "skills"
+  ],
+  "agents": [
+    "agents"
+  ],
+  "prompts": [
+    "prompts"
+  ],
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "requireHumanReviewReminder": {
+        "type": "boolean",
+        "default": true,
+        "description": "Require uncertainty and human-review reminders in legal-aid preparation outputs."
+      },
+      "blockFabricatedEvidence": {
+        "type": "boolean",
+        "default": true,
+        "description": "Block suggestions that fabricate, alter, or backfill evidence."
+      }
+    }
+  }
+}

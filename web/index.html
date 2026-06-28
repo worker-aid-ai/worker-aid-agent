@@ -3,87 +3,163 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Worker Aid Agent</title>
+  <title>Worker Aid Agent 本地向导</title>
   <link rel="stylesheet" href="/web/styles.css" />
 </head>
 <body>
-  <header class="hero">
+  <header class="topbar">
     <div>
-      <p class="eyebrow">Worker Aid Agent · 中国劳动者权益自助工具</p>
-      <h1>案情采集、金额估算、最低工资查询与文书草稿导出</h1>
-      <p>本页面是离线优先的静态 MVP，不上传个人信息。生成内容仅供材料准备和咨询参考，不构成法律意见。</p>
+      <p class="eyebrow">Worker Aid Agent</p>
+      <h1>劳动权益材料整理本地向导</h1>
+      <p class="lead">先在本机整理案情、证据、金额和材料草稿；需要外部模型时，由你确认后再发送已脱敏摘要。</p>
+    </div>
+    <div class="status-panel" aria-label="本地处理状态">
+      <span class="status-dot"></span>
+      <strong>默认本机处理</strong>
+      <p>不主动上传身份证号、完整手机号、住址、银行卡号、未脱敏合同或完整聊天记录。</p>
     </div>
   </header>
 
-  <main class="layout">
-    <section class="card">
-      <h2>1. 案情采集</h2>
-      <div class="grid two">
-        <label>劳动者姓名<input id="workerName" placeholder="张三" /></label>
-        <label>工作城市<input id="city" placeholder="深圳" /></label>
-        <label>用人单位<input id="employerName" placeholder="某科技有限公司" /></label>
-        <label>岗位<input id="position" placeholder="前端开发" /></label>
-        <label>入职日期<input id="startDate" type="date" /></label>
-        <label>解除/离职日期<input id="terminationDate" type="date" /></label>
-        <label>月工资<input id="monthlySalary" type="number" placeholder="9000" /></label>
-        <label>欠薪金额<input id="unpaidWages" type="number" placeholder="18000" /></label>
-        <label>是否签书面劳动合同
-          <select id="hasContract"><option value="unknown">未知/需补充</option><option value="true">已签</option><option value="false">未签</option></select>
+  <main class="workspace">
+    <aside class="sidebar" aria-label="处理步骤">
+      <button class="step is-active" data-jump="intake"><span>1</span>案情向导</button>
+      <button class="step" data-jump="model"><span>2</span>模型配置</button>
+      <button class="step" data-jump="outputs"><span>3</span>材料导出</button>
+      <button class="step" data-jump="plugin"><span>4</span>协作者插件</button>
+    </aside>
+
+    <section class="flow">
+      <section id="intake" class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">普通用户入口</p>
+            <h2>先把事实说清楚</h2>
+          </div>
+          <button id="loadSample" class="secondary">填入脱敏示例</button>
+        </div>
+
+        <div class="notice">
+          本工具不是律师，也不替你作出法律判断。输出只用于材料准备和咨询前整理，提交前请人工复核事实、证据、金额、时效和当地政策。
+        </div>
+
+        <div class="grid two">
+          <label>劳动者称呼<input id="workerName" placeholder="劳动者A" autocomplete="off" /></label>
+          <label>工作城市<input id="city" placeholder="深圳" autocomplete="off" /></label>
+          <label>用人单位简称<input id="employerName" placeholder="某科技公司" autocomplete="off" /></label>
+          <label>岗位<input id="position" placeholder="运营、销售、客服等" autocomplete="off" /></label>
+          <label>入职日期<input id="startDate" type="date" /></label>
+          <label>离职/解除日期<input id="terminationDate" type="date" /></label>
+          <label>月工资基数<input id="monthlySalary" type="number" min="0" placeholder="9000" /></label>
+          <label>估计欠薪金额<input id="unpaidWages" type="number" min="0" placeholder="18000" /></label>
+          <label>是否签书面劳动合同
+            <select id="hasContract">
+              <option value="unknown">不确定/需要补充</option>
+              <option value="true">已签</option>
+              <option value="false">未签</option>
+            </select>
+          </label>
+          <label>主要争议类型
+            <select id="scenario">
+              <option value="wage_arrears">拖欠工资</option>
+              <option value="overtime">加班费</option>
+              <option value="no_contract">未签书面劳动合同</option>
+              <option value="termination">违法解除/辞退</option>
+              <option value="other">其他劳动争议</option>
+            </select>
+          </label>
+        </div>
+
+        <label>主要诉求<textarea id="claims" placeholder="每行写一个诉求，例如：&#10;请求支付拖欠工资 18000 元&#10;请求依法出具离职证明"></textarea></label>
+        <label>关键时间线<textarea id="timelineEvents" placeholder="YYYY-MM-DD | 事件 | 说明&#10;2025-04-10 | 工资开始异常 | 4 月工资未按约定日期发放"></textarea></label>
+
+        <div class="actions">
+          <button id="buildCase">生成本地案情</button>
+          <button id="downloadCase" class="secondary">下载案情 JSON</button>
+        </div>
+
+        <div id="redactionWarning" class="warning" hidden></div>
+        <pre id="caseOutput" aria-live="polite"></pre>
+      </section>
+
+      <section id="model" class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">可选</p>
+            <h2>模型 API 配置</h2>
+          </div>
+          <span id="modelBadge" class="badge">未配置</span>
+        </div>
+
+        <p class="muted">API key 只保存在当前浏览器会话中，页面刷新后需要重新填写。没有勾选确认时，界面不会允许外部模型调用。</p>
+
+        <div class="grid two">
+          <label>Provider
+            <select id="provider">
+              <option value="not-configured">暂不使用模型</option>
+              <option value="openai-compatible">OpenAI-compatible</option>
+              <option value="deepseek">DeepSeek</option>
+              <option value="qwen">通义千问</option>
+              <option value="local">本地模型服务</option>
+            </select>
+          </label>
+          <label>模型名称<input id="modelName" placeholder="例如 gpt-4.1-mini / deepseek-chat" autocomplete="off" /></label>
+          <label>Base URL<input id="baseUrl" placeholder="https://api.example.com/v1" autocomplete="off" /></label>
+          <label>API key<input id="apiKey" type="password" placeholder="只保存在当前会话" autocomplete="off" /></label>
+        </div>
+
+        <label class="checkline">
+          <input id="confirmExternal" type="checkbox" />
+          我确认：如需调用外部模型，只发送必要且已脱敏的摘要，不上传完整敏感材料。
         </label>
-      </div>
-      <label>主要诉求<textarea id="claims" placeholder="请求支付拖欠工资 18000 元\n请求支付未签劳动合同二倍工资差额"></textarea></label>
-      <div class="actions">
-        <button id="buildCase">生成案情 JSON</button>
-        <button id="downloadCase">下载案情 JSON</button>
-      </div>
-      <pre id="caseOutput"></pre>
-    </section>
 
-    <section class="card">
-      <h2>2. 加班费估算</h2>
-      <div class="grid three">
-        <label>月工资基数<input id="otSalary" type="number" placeholder="8700" /></label>
-        <label>工作日加班小时<input id="otWorkday" type="number" placeholder="10" /></label>
-        <label>休息日加班小时<input id="otRest" type="number" placeholder="8" /></label>
-        <label>法定节假日加班小时<input id="otHoliday" type="number" placeholder="8" /></label>
-        <label>已支付加班费<input id="otPaid" type="number" placeholder="0" /></label>
-      </div>
-      <button id="calcOvertime">计算加班费</button>
-      <pre id="overtimeOutput"></pre>
-    </section>
+        <div class="actions">
+          <button id="saveModel">保存当前会话配置</button>
+          <button id="checkModel" class="secondary">检查是否可调用</button>
+        </div>
+        <pre id="modelOutput"></pre>
+      </section>
 
-    <section class="card">
-      <h2>3. 最低工资查询</h2>
-      <div class="grid two">
-        <label>地区<select id="minimumRegion"></select></label>
-        <label>档位<input id="minimumTier" type="number" min="1" value="1" /></label>
-      </div>
-      <button id="lookupMinimum">查询</button>
-      <pre id="minimumOutput"></pre>
-    </section>
+      <section id="outputs" class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">共享核心输出</p>
+            <h2>生成可复核材料</h2>
+          </div>
+        </div>
 
-    <section class="card">
-      <h2>4. 案件时间线</h2>
-      <p>按日期整理入职、欠薪、催讨、解除、投诉或仲裁等关键事件。不要为补齐时间线而编造日期或证据来源。</p>
-      <label>补充事件<textarea id="timelineEvents" placeholder="2025-04-10 | 工资开始异常 | 4 月工资延迟发放&#10;2025-11-05 | 第一次催讨工资 | 通过微信向主管催讨 10 月工资"></textarea></label>
-      <button id="buildTimeline">生成时间线</button>
-      <div id="timelineView" class="timeline" aria-live="polite"></div>
-      <pre id="timelineOutput"></pre>
-    </section>
+        <div class="tool-grid">
+          <button data-doc="summary">法援咨询摘要</button>
+          <button data-doc="arbitration">仲裁申请书草稿</button>
+          <button data-doc="evidence">证据目录</button>
+          <button data-doc="timeline">时间线</button>
+        </div>
 
-    <section class="card">
-      <h2>5. 文书草稿导出</h2>
-      <p>基于案情 JSON 生成可复制的仲裁申请书、法律援助咨询摘要和证据目录草稿。</p>
-      <div class="actions">
-        <button data-doc="arbitration">生成仲裁申请书</button>
-        <button data-doc="legal-aid-summary">生成法律援助摘要</button>
-        <button data-doc="evidence-index">生成证据目录</button>
-      </div>
-      <div class="actions">
-        <button id="downloadMd">下载 Markdown</button>
-        <button id="downloadHtml">下载 HTML</button>
-      </div>
-      <textarea id="docOutput" class="doc" placeholder="文书草稿将在这里生成"></textarea>
+        <div class="actions">
+          <button id="downloadMd" class="secondary">下载 Markdown</button>
+          <button id="downloadHtml" class="secondary">下载 HTML</button>
+        </div>
+
+        <textarea id="docOutput" class="doc" placeholder="生成的材料草稿会显示在这里。"></textarea>
+      </section>
+
+      <section id="plugin" class="panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">专业协作者入口</p>
+            <h2>Worker Aid 插件包</h2>
+          </div>
+        </div>
+        <p class="muted">面向公益律师、法援志愿者、工会工作者和 AI power user，可把仓库中的 skills、agents、prompts 和安全规则安装进已有 AI 工具，用于复核、整理和批量生成材料。</p>
+        <div class="manifest-box">
+          <span>manifest</span>
+          <code>worker-aid.plugin.json</code>
+        </div>
+        <ul class="plain-list">
+          <li>普通劳动者：优先使用本页面的本地向导。</li>
+          <li>专业协作者：使用插件包在 Codex、Claude、OpenClaw、Cursor 等环境中复用同一套规则。</li>
+          <li>两种入口共享数据、模板、风险拦截和人工复核提醒。</li>
+        </ul>
+      </section>
     </section>
   </main>
 
