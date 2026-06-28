@@ -86,7 +86,7 @@ node src/worker-aid-cli.mjs draft arbitration examples/case-wage-arrears.json
 
 输出仅为草稿，提交前应核验当地仲裁委表格要求、主体信息、证据编号、请求金额和法律依据。
 
-## 7. v0.3 安全增强命令
+## 7. 安全、法条与政策辅助命令
 
 ```bash
 # 本地法条索引检索
