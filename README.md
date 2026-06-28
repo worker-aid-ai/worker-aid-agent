@@ -29,15 +29,23 @@ Worker Aid Agent 不是“AI 律师”，不会替你作出法律判断，也不
 | 法律援助准备 | 案情摘要、证据目录、待咨询问题、文书草稿 |
 | 本地求助入口 | 法律援助、劳动监察、人社服务、仲裁入口的索引和核验提醒 |
 
-## 三步本地试用
+## 三步本地 App 试用
 
-本项目当前主推本地 Web 界面：你的输入默认只在本机浏览器和本地服务中处理，不会主动上传到外部平台。
+本项目当前主推面向普通劳动者的本地 App：你的输入默认只在本机浏览器和本地服务中处理，不会主动上传到外部平台。页面包含案情向导、可选模型 API 配置、隐私确认、材料导出和专业协作者插件说明。
 
 要求：Node.js 18+，pnpm 11+
 
+Windows PowerShell：
+
+```powershell
+.\start-worker-aid.ps1
+```
+
+通用方式：
+
 ```bash
 pnpm install
-pnpm run serve:web
+pnpm run start:app
 ```
 
 然后在浏览器打开：
@@ -46,7 +54,7 @@ pnpm run serve:web
 http://localhost:5173/
 ```
 
-你可以在页面里填写案情信息，试用金额估算、最低工资查询、证据目录、仲裁申请书草稿、法律援助咨询摘要等功能。
+你可以在页面里填写脱敏案情信息，生成本地案情 JSON、法律援助咨询摘要、仲裁申请书草稿、证据目录和案件时间线。模型 API 配置是可选项；调用外部模型前必须由用户勾选确认。
 
 ## 隐私与安全提醒
 
@@ -55,6 +63,7 @@ http://localhost:5173/
 - 不要让任何工具替你编造、修改或补充不存在的证据。
 - 金额估算只用于准备材料和沟通参考，不代表最终可获支持金额。
 - 地方政策、最低工资、仲裁材料要求、法律援助条件可能变化，提交前请通过 12333、12348、当地人社部门、司法行政机关、法律援助中心、仲裁委等官方渠道核验。
+- 如果配置外部模型 API，请只发送必要且已脱敏的摘要；API key 只应保存在当前会话或用户本机环境中，不要提交到仓库或公开 issue。
 
 详见：[法律与使用免责声明](docs/LEGAL_DISCLAIMER.md)、[隐私与安全规则](docs/PRIVACY_AND_SAFETY.md)。
 
@@ -104,13 +113,14 @@ node src/worker-aid-cli.mjs export evidence-index examples/case-wage-arrears.jso
 
 ## 当前能力
 
-- `web/`：本地静态 Web 表单界面，用于采集案情、估算金额、生成材料草稿。
-- `src/`：零运行依赖 Node.js CLI 原型。
+- `web/`：本地 App 界面，用于案情向导、模型配置、隐私确认和材料导出。
+- `src/`：零运行依赖 Node.js CLI、本地 Web 服务和共享核心逻辑。
 - `data/`：常见争议类型、证据清单、法律依据索引、本地政策索引、评测集、最低工资和服务入口启动版数据。
 - `templates/`：劳动争议常用材料草稿模板。
 - `skills/`：面向 AI Agent / Skill 平台的技能定义。
 - `agents/`：面向多 Agent 编排的角色说明。
 - `prompts/`：可复制到 Claude Code、Codex、OpenClaw、Cursor、Dify、Coze、FastGPT 等工具中的提示词。
+- `worker-aid.plugin.json`：面向公益律师、法援志愿者、工会工作者和 AI power user 的插件包入口。
 
 ## 开发者快速开始
 
@@ -119,7 +129,7 @@ pnpm install
 pnpm run validate
 pnpm test
 pnpm run demo
-pnpm run serve:web
+pnpm run start:app
 ```
 
 常用开发文档：
@@ -127,7 +137,8 @@ pnpm run serve:web
 - [贡献指南](CONTRIBUTING.md)
 - [中文文档站](docs/site/index.html)
 - [使用指南](docs/USAGE.md)
-- [Web 表单界面说明](docs/WEB_UI.md)
+- [本地 App 说明](docs/WEB_UI.md)
+- [Worker Aid 插件包说明](docs/PLUGIN_PACKAGE.md)
 - [数据源与更新说明](docs/DATA_SOURCES.md)
 - [金额计算与测试说明](docs/CALCULATION_TESTS.md)
 - [安全与评测功能说明](docs/SAFETY_AND_EVALUATION.md)
@@ -147,11 +158,13 @@ worker-aid-agent/
 ├── examples/                       # 示例案情输入
 ├── prompts/                        # 可复用提示词
 ├── skills/                         # AI Agent/Skill 规范
-├── src/                            # 零依赖 CLI 原型和本地 Web 服务
+├── src/                            # 零依赖 CLI、本地 Web 服务和共享核心逻辑
 ├── templates/                      # 文书和清单模板
 ├── tests/                          # Node 原生测试
-├── web/                            # 本地静态 Web UI
+├── web/                            # 本地 App UI
 ├── .github/                        # CI
+├── worker-aid.plugin.json          # 专业协作者插件包 manifest
+├── start-worker-aid.ps1            # Windows 本地 App 启动脚本
 ├── package.json
 └── README.md
 ```

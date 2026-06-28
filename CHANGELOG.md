@@ -2,6 +2,22 @@
 
 本项目采用接近 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 的格式记录重要变化。版本日期以仓库标签或明确发布记录为准；未打标签的版本会明确标注，避免误导使用者。
 
+## 1.1.0 - 2026-06-28
+
+### Added
+
+- 新增面向普通劳动者的本地 App 工作流，包含案情向导、可选模型 API 配置、外部调用确认、材料导出和协作者插件说明。
+- 新增 `worker-aid.plugin.json`，作为面向公益律师、法援志愿者、工会工作者和 AI power user 的插件包 manifest。
+- 新增 `src/lib/product-entry.mjs`，统一本地会话、模型配置脱敏、外部模型调用确认和人工复核提醒。
+- 新增 Windows 本地启动脚本 `start-worker-aid.ps1` 和 `pnpm run start:app`。
+- 新增 [Worker Aid 插件包说明](docs/PLUGIN_PACKAGE.md)。
+
+### Changed
+
+- 本地 Web 入口从表单 demo 调整为普通用户优先的本地 App。
+- 文档同步说明“独立本地 App 为主、专业协作者插件包为辅”的产品形态。
+- 本地静态服务支持 `.mjs` JavaScript module 响应类型。
+
 ## 1.0.0 - 2026-06-20
 
 ### Added

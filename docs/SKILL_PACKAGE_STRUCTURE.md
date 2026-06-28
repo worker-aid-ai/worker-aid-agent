@@ -1,4 +1,4 @@
-# Worker Aid Skill 包结构 v1.0
+# Worker Aid Skill 包结构
 
 > 本文定义本项目 Skill 包的稳定结构。Skill 用于帮助 AI Agent 整理劳动争议事实、证据、金额和材料草稿，不提供最终法律意见。
 
