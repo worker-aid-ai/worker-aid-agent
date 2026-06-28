@@ -1,5 +1,9 @@
 import { buildCaseTimeline } from '/src/lib/timeline.mjs';
 import { buildLocalAgentSession, canCallExternalModel, normalizeModelConfig } from '/src/lib/product-entry.mjs';
+import { scanSensitiveInput } from '/src/lib/redaction-scan.mjs';
+import { buildLocalSessionSnapshot, parseLocalSessionSnapshot } from '/src/lib/local-session.mjs';
+
+const LOCAL_SESSION_KEY = 'worker-aid-local-session';
 
 let currentCase;
 let currentDoc = '';
@@ -12,6 +16,9 @@ init();
 function init() {
   $('loadSample').addEventListener('click', loadSample);
   $('buildCase').addEventListener('click', buildCase);
+  $('saveSession').addEventListener('click', saveLocalSession);
+  $('restoreSession').addEventListener('click', restoreLocalSession);
+  $('clearSession').addEventListener('click', clearLocalSession);
   $('downloadCase').addEventListener('click', () => download('worker-aid-case.json', JSON.stringify(buildCase(), null, 2), 'application/json'));
   $('saveModel').addEventListener('click', saveModelConfig);
   $('checkModel').addEventListener('click', checkModelReadiness);
@@ -67,11 +74,60 @@ function buildCase() {
   };
 
   const session = buildLocalAgentSession(currentCase, { model: modelConfig });
-  const warning = scanSensitiveText(JSON.stringify(currentCase));
-  $('redactionWarning').hidden = !warning;
-  $('redactionWarning').textContent = warning;
+  const scan = scanSensitiveInput(currentCase);
+  $('redactionWarning').hidden = scan.findings.length === 0;
+  $('redactionWarning').innerHTML = scan.findings.length
+    ? scan.reminders.map((item) => `<p>${escapeHtml(item)}</p>`).join('')
+    : '';
   $('caseOutput').textContent = JSON.stringify(session, null, 2);
   return currentCase;
+}
+
+function saveLocalSession() {
+  const snapshot = buildLocalSessionSnapshot(buildCase(), modelConfig);
+  window.localStorage.setItem(LOCAL_SESSION_KEY, JSON.stringify(snapshot));
+  setSessionStatus(`已保存本机草稿：${new Date(snapshot.savedAt).toLocaleString()}`);
+}
+
+function restoreLocalSession() {
+  const parsed = parseLocalSessionSnapshot(window.localStorage.getItem(LOCAL_SESSION_KEY));
+  if (!parsed.ok) {
+    setSessionStatus(parsed.error, 'warn');
+    return;
+  }
+  applyCaseToForm(parsed.value.case);
+  modelConfig = parsed.value.model;
+  $('modelBadge').textContent = modelConfig.hasApiKey ? `已配置 ${modelConfig.apiKeyPreview}` : '未配置';
+  buildCase();
+  setSessionStatus('已恢复本机草稿。请重新填写 API key 后再调用外部模型。');
+}
+
+function clearLocalSession() {
+  window.localStorage.removeItem(LOCAL_SESSION_KEY);
+  setSessionStatus('已清除本机草稿。');
+}
+
+function setSessionStatus(message, tone = 'ok') {
+  const status = $('sessionStatus');
+  status.textContent = message;
+  status.dataset.tone = tone;
+}
+
+function applyCaseToForm(input = {}) {
+  $('workerName').value = input.worker?.name || '';
+  $('city').value = input.worker?.city || '';
+  $('employerName').value = input.employer?.name || '';
+  $('position').value = input.facts?.position || '';
+  $('startDate').value = input.facts?.startDate || '';
+  $('terminationDate').value = input.facts?.terminationDate || '';
+  $('monthlySalary').value = input.facts?.monthlySalary || '';
+  $('unpaidWages').value = input.facts?.unpaidWages || '';
+  $('hasContract').value = input.facts?.hasWrittenContract === true ? 'true' : input.facts?.hasWrittenContract === false ? 'false' : 'unknown';
+  $('scenario').value = input.facts?.scenario || 'wage_arrears';
+  $('claims').value = (input.claims || []).join('\n');
+  $('timelineEvents').value = (input.facts?.events || [])
+    .map((event) => [event.date, event.title, event.description].filter(Boolean).join(' | '))
+    .join('\n');
 }
 
 function saveModelConfig() {
@@ -201,13 +257,6 @@ function parseTimelineEvents(value) {
     const [date, title, ...description] = line.split('|').map((item) => item.trim());
     return { date, title, description: description.join(' | ') };
   }).filter((event) => event.date || event.title || event.description);
-}
-
-function scanSensitiveText(text) {
-  if (/(1[3-9]\d{9})/.test(text)) return '检测到完整手机号。建议先脱敏为 138****8000 这类格式。';
-  if (/(\d{17}[\dXx])/.test(text)) return '检测到疑似完整身份证号。请删除或脱敏后再整理材料。';
-  if (/银行卡|卡号/.test(text)) return '如包含银行卡号，请只保留必要尾号并人工复核脱敏结果。';
-  return '';
 }
 
 function wrapHtml(markdown) {

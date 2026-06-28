@@ -284,6 +284,34 @@ button.secondary:hover {
   background: #f3f7ff;
 }
 
+button.danger {
+  border-color: #d97706;
+  color: #8a4b00;
+}
+
+button.danger:hover {
+  background: #fff7df;
+}
+
+.session-status {
+  min-height: 24px;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.session-status[data-tone="warn"] {
+  color: var(--warning);
+}
+
+.warning p {
+  margin: 0;
+}
+
+.warning p + p {
+  margin-top: 6px;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
