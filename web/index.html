@@ -74,9 +74,13 @@
 
         <div class="actions">
           <button id="buildCase">生成本地案情</button>
+          <button id="saveSession" class="secondary">保存到本机</button>
+          <button id="restoreSession" class="secondary">恢复本机草稿</button>
+          <button id="clearSession" class="secondary danger">清除本机草稿</button>
           <button id="downloadCase" class="secondary">下载案情 JSON</button>
         </div>
 
+        <div id="sessionStatus" class="session-status" aria-live="polite"></div>
         <div id="redactionWarning" class="warning" hidden></div>
         <pre id="caseOutput" aria-live="polite"></pre>
       </section>
