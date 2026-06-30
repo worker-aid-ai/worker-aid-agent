@@ -1,6 +1,6 @@
 {
   "name": "worker-aid-agent",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "packageManager": "pnpm@11.1.2",
   "description": "Open-source AI agents and skills for Chinese workers' rights self-help, evidence organization, and legal-aid preparation.",
   "type": "module",
