@@ -23,4 +23,7 @@ if (-not (Test-Path "node_modules")) {
   pnpm install
 }
 
+Write-Host "Opening http://localhost:$port/ in your browser..." -ForegroundColor Green
+Start-Process "http://localhost:$port/"
+
 pnpm run start:app

@@ -4,6 +4,12 @@
 
 普通劳动者优先使用本地 App，而不是先学习 CLI 或插件安装。页面会引导填写脱敏案情、配置可选模型 API、确认隐私边界并导出材料草稿。
 
+Windows 双击启动：
+
+```text
+start-worker-aid.cmd
+```
+
 Windows PowerShell：
 
 ```powershell
