@@ -168,6 +168,10 @@ h2 {
   margin-bottom: 18px;
 }
 
+.panel-heading.compact {
+  margin-bottom: 12px;
+}
+
 .notice, .warning {
   margin: 0 0 18px;
   padding: 12px 14px;
@@ -312,6 +316,29 @@ button.danger:hover {
   margin-top: 6px;
 }
 
+.agent-box {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.question-card {
+  margin: 0 0 14px;
+  padding: 12px 14px;
+  border: 1px solid #b9d8cf;
+  border-radius: 8px;
+  background: var(--panel-soft);
+  color: #274f47;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -372,6 +399,7 @@ pre {
   }
   .step { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   .tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .agent-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 640px) {

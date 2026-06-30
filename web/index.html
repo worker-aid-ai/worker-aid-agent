@@ -83,6 +83,29 @@
         <div id="sessionStatus" class="session-status" aria-live="polite"></div>
         <div id="redactionWarning" class="warning" hidden></div>
         <pre id="caseOutput" aria-live="polite"></pre>
+
+        <div class="agent-box" aria-label="v1.3 Agent 化案情问答">
+          <div class="panel-heading compact">
+            <div>
+              <p class="eyebrow">v1.3 Agent 问答</p>
+              <h2>按轮次补齐缺失事实</h2>
+            </div>
+            <button id="startAgentFlow" class="secondary">从当前案情开始</button>
+          </div>
+          <div id="agentQuestion" class="question-card" aria-live="polite"></div>
+          <label>本轮回答 JSON
+            <textarea id="agentAnswers" placeholder='{"paid_records":"工资条、银行流水和催发工资聊天记录真实存在","help_channel":"draft_materials"}'></textarea>
+          </label>
+          <div class="actions">
+            <button id="answerAgentFlow">提交本轮回答</button>
+            <button id="previewAgentModel" class="secondary">查看模型发送前摘要</button>
+            <button id="draftAgentMaterials" class="secondary">生成材料草稿</button>
+          </div>
+          <div class="agent-grid">
+            <pre id="agentStateOutput" aria-live="polite"></pre>
+            <pre id="agentOutput" aria-live="polite"></pre>
+          </div>
+        </div>
       </section>
 
       <section id="model" class="panel">

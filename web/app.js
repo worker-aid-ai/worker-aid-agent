@@ -2,12 +2,19 @@ import { buildCaseTimeline } from '/src/lib/timeline.mjs';
 import { buildLocalAgentSession, canCallExternalModel, normalizeModelConfig } from '/src/lib/product-entry.mjs';
 import { scanSensitiveInput } from '/src/lib/redaction-scan.mjs';
 import { buildLocalSessionSnapshot, parseLocalSessionSnapshot } from '/src/lib/local-session.mjs';
+import {
+  answerAgentQuestion,
+  buildAgentOutput,
+  buildModelCallPreview,
+  createAgentState
+} from '/src/lib/agent-flow.mjs';
 
 const LOCAL_SESSION_KEY = 'worker-aid-local-session';
 
 let currentCase;
 let currentDoc = '';
 let modelConfig = normalizeModelConfig();
+let agentState = createAgentState('wage_arrears');
 
 const $ = (id) => document.getElementById(id);
 
@@ -20,6 +27,10 @@ function init() {
   $('restoreSession').addEventListener('click', restoreLocalSession);
   $('clearSession').addEventListener('click', clearLocalSession);
   $('downloadCase').addEventListener('click', () => download('worker-aid-case.json', JSON.stringify(buildCase(), null, 2), 'application/json'));
+  $('startAgentFlow').addEventListener('click', startAgentFlow);
+  $('answerAgentFlow').addEventListener('click', answerAgentFlow);
+  $('previewAgentModel').addEventListener('click', previewAgentModel);
+  $('draftAgentMaterials').addEventListener('click', draftAgentMaterials);
   $('saveModel').addEventListener('click', saveModelConfig);
   $('checkModel').addEventListener('click', checkModelReadiness);
   $('downloadMd').addEventListener('click', () => download('worker-aid-document.md', currentDoc || $('docOutput').value, 'text/markdown'));
@@ -27,6 +38,7 @@ function init() {
   document.querySelectorAll('[data-doc]').forEach((button) => button.addEventListener('click', () => buildDoc(button.dataset.doc)));
   document.querySelectorAll('[data-jump]').forEach((button) => button.addEventListener('click', () => jumpTo(button)));
   buildCase();
+  renderAgentState();
 }
 
 function jumpTo(button) {
@@ -81,6 +93,59 @@ function buildCase() {
     : '';
   $('caseOutput').textContent = JSON.stringify(session, null, 2);
   return currentCase;
+}
+
+function startAgentFlow() {
+  const input = buildCase();
+  agentState = createAgentState(input.facts?.scenario || 'wage_arrears', {
+    city: input.worker?.city,
+    employment_period: [input.facts?.startDate, input.facts?.terminationDate].filter(Boolean).join(' 至 '),
+    wage_standard: input.facts?.monthlySalary ? `月工资 ${input.facts.monthlySalary} 元` : '',
+    unpaid_periods: input.facts?.unpaidWages ? `估算欠薪 ${input.facts.unpaidWages} 元，期间待核验` : '',
+    evidence_sources: input.facts?.events?.length ? '已填写时间线事件，证据来源仍需逐项核验' : ''
+  });
+  $('agentAnswers').value = '';
+  renderAgentState();
+}
+
+function answerAgentFlow() {
+  const parsed = parseAnswerJson($('agentAnswers').value);
+  if (!parsed.ok) {
+    $('agentOutput').textContent = JSON.stringify(parsed, null, 2);
+    return;
+  }
+  agentState = answerAgentQuestion(agentState, parsed.value);
+  renderAgentState();
+}
+
+function previewAgentModel() {
+  $('agentOutput').textContent = JSON.stringify(buildModelCallPreview(agentState), null, 2);
+}
+
+function draftAgentMaterials() {
+  const output = buildAgentOutput(agentState, 'draft_materials');
+  currentDoc = output.content;
+  $('docOutput').value = currentDoc;
+  $('agentOutput').textContent = currentDoc;
+}
+
+function renderAgentState() {
+  const followup = buildAgentOutput(agentState, 'followup_missing_facts');
+  $('agentQuestion').textContent = agentState.nextQuestion
+    ? `${agentState.nextQuestion.prompt}\n\n缺失信息：${agentState.missingFactLabels.join('、')}`
+    : '本轮已收集完问题树中的关键事实。仍请人工复核事实、证据、金额、时效和地方政策。';
+  $('agentStateOutput').textContent = JSON.stringify(followup.content, null, 2);
+}
+
+function parseAnswerJson(value) {
+  if (!String(value || '').trim()) {
+    return { ok: false, error: '请用 JSON 填写本轮回答，例如 {"paid_records":"工资条和银行流水"}' };
+  }
+  try {
+    return { ok: true, value: JSON.parse(value) };
+  } catch {
+    return { ok: false, error: '本轮回答不是有效 JSON。请检查引号、逗号和大括号。' };
+  }
 }
 
 function saveLocalSession() {

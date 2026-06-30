@@ -60,7 +60,7 @@ pnpm run start:app
 http://localhost:5173/
 ```
 
-你可以在页面里填写脱敏案情信息，保存/恢复本机草稿，生成本地案情 JSON、法律援助咨询摘要、仲裁申请书草稿、证据目录和案件时间线，并下载 Markdown/HTML 材料草稿。模型 API 配置是可选项；调用外部模型前必须由用户勾选确认。
+你可以在页面里填写脱敏案情信息，保存/恢复本机草稿，使用 v1.3 Agent 问答面板按轮次补齐缺失事实，查看外部模型发送前的脱敏摘要，生成本地案情 JSON、法律援助咨询摘要、仲裁申请书草稿、证据目录和案件时间线，并下载 Markdown/HTML 材料草稿。模型 API 配置是可选项；调用外部模型前必须由用户勾选确认。
 
 ## 隐私与安全提醒
 
@@ -108,10 +108,15 @@ node src/worker-aid-cli.mjs risk-check exports/legal-aid-summary.md
 node src/worker-aid-cli.mjs eval-set
 node src/worker-aid-cli.mjs anonymize-case examples/case-wage-arrears.json
 
-# 8. 基于结构化事实生成仲裁申请书草稿
+# 8. 启动 v1.3 Agent 化案情问答状态，输出缺失事实、风险提醒和模型发送前脱敏摘要
+node src/worker-aid-cli.mjs agent wage_arrears
+# 也可以传入扁平回答 JSON，例如 {"termination_notice":"...","evidence_sources":"..."}
+node src/worker-aid-cli.mjs agent illegal_termination <answers.json>
+
+# 9. 基于结构化事实生成仲裁申请书草稿
 node src/worker-aid-cli.mjs draft arbitration examples/case-wage-arrears.json
 
-# 9. 导出可复核材料草稿
+# 10. 导出可复核材料草稿
 node src/worker-aid-cli.mjs export arbitration examples/case-wage-arrears.json exports/arbitration.html
 node src/worker-aid-cli.mjs export legal-aid-summary examples/case-wage-arrears.json exports/legal-aid-summary.md
 node src/worker-aid-cli.mjs export evidence-index examples/case-wage-arrears.json exports/evidence-index.doc
@@ -119,8 +124,8 @@ node src/worker-aid-cli.mjs export evidence-index examples/case-wage-arrears.jso
 
 ## 当前能力
 
-- `web/`：本地 App 界面，用于案情向导、模型配置、隐私确认和材料导出。
-- `src/`：零运行依赖 Node.js CLI、本地 Web 服务和共享核心逻辑。
+- `web/`：本地 App 界面，用于案情向导、v1.3 Agent 多轮问答、模型发送前摘要确认、隐私确认和材料导出。
+- `src/`：零运行依赖 Node.js CLI、本地 Web 服务、Agent 问答状态和共享核心逻辑。
 - `data/`：常见争议类型、证据清单、法律依据索引、本地政策索引、评测集、最低工资和服务入口启动版数据。
 - `templates/`：劳动争议常用材料草稿模板。
 - `skills/`：面向 AI Agent / Skill 平台的技能定义。
