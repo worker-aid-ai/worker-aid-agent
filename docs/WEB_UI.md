@@ -4,6 +4,12 @@
 
 ## 启动方式
 
+Windows 双击启动：
+
+```text
+start-worker-aid.cmd
+```
+
 Windows PowerShell：
 
 ```powershell

@@ -2,7 +2,7 @@
   "id": "worker-aid-agent",
   "name": "Worker Aid Agent",
   "description": "Chinese workers' rights self-help, evidence organization, and legal-aid preparation skills for professional collaborators.",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "skills": [
     "skills"
   ],
