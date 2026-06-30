@@ -35,6 +35,12 @@ Worker Aid Agent 不是“AI 律师”，不会替你作出法律判断，也不
 
 要求：Node.js 18+，pnpm 11+
 
+Windows 双击启动：
+
+```text
+start-worker-aid.cmd
+```
+
 Windows PowerShell：
 
 ```powershell
@@ -48,13 +54,13 @@ pnpm install
 pnpm run start:app
 ```
 
-然后在浏览器打开：
+双击或 PowerShell 启动脚本会自动打开本地页面；如果使用通用方式，请在浏览器打开：
 
 ```text
 http://localhost:5173/
 ```
 
-你可以在页面里填写脱敏案情信息，生成本地案情 JSON、法律援助咨询摘要、仲裁申请书草稿、证据目录和案件时间线。模型 API 配置是可选项；调用外部模型前必须由用户勾选确认。
+你可以在页面里填写脱敏案情信息，保存/恢复本机草稿，生成本地案情 JSON、法律援助咨询摘要、仲裁申请书草稿、证据目录和案件时间线，并下载 Markdown/HTML 材料草稿。模型 API 配置是可选项；调用外部模型前必须由用户勾选确认。
 
 ## 隐私与安全提醒
 
@@ -164,6 +170,7 @@ worker-aid-agent/
 ├── web/                            # 本地 App UI
 ├── .github/                        # CI
 ├── worker-aid.plugin.json          # 专业协作者插件包 manifest
+├── start-worker-aid.cmd            # Windows 双击启动入口
 ├── start-worker-aid.ps1            # Windows 本地 App 启动脚本
 ├── package.json
 └── README.md
